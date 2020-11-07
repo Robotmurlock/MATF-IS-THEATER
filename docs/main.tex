@@ -59,9 +59,15 @@
 
 \begin{document}
 
-\title{[RS] Skripta: Pitanja i odgovori}
+\title{Informacioni sistem pozorišta\\ \small{Seminarski rad u okviru kursa\\Informacioni sistemi\\ Matematički fakultet}}
 
-\author{Momir Adžemović}
+\author{
+Katarina Savičić 1086/2020\\
+Dragana Milić 1042/2019\\
+Nikola Vuković 1090/2020\\
+Ognjen Milinković 1008/2020\\
+Momir Adžemović 1005/2020
+}
 
 \date{1.~april 2020.}
 
@@ -71,15 +77,34 @@
 
 Ovo je sažetak
 
+\newpage
+
 \tableofcontents
+
+\newpage
 
 \section{Uvod}
 Ovo je uvod.
 
-\section{Prva sekcija.}
-Ovo je prva sekcija.
-Sve reference se beleže u ,,literatura.bib`` datoteci. \cite{githowto}
-    
+\section{Slučajevi upotrebe.}
+
+\subsection{Organizacija predstave}
+Da bi se predstava odrzala, potrebno je da korisnik koji je registrovan kao organizator kreira predstavu. U IS se belezi predstava sa stanjem “prijava”. Supervizor pozorista moze da odobri ili odbije prijavljenu predstavu. Ako se prijava odobri, prelazi u sledece stanje odobrena. Korisnik koji je registrovan kao glumac moze da se prijavi za jednu (ili vise) uloga. Svaka odobrena predstava ima ulogu rezerva, za koju moze da se prijavi bilo koji glumac. Supervizor moze da promeni stanje predstave koja ima stanje odobrena i ima popunjena mesta glumca kao u pripremi. 
+
+\subsection{Rezervisanje pozorišnih sala}
+Reditelj predstave u pripremi treba da rezerviše salu za probe. Održavanje predstave takođe mora da ima salu. Dakle treba omogućiti uvid u slobodne sale, kao i rezervacije unapred.
+
+\subsection{Održavanje predstave}
+Predstava sa statusom “u pripremi” može da se zakaže za održavanje određenog datuma u određenoj sali. 
+
+\subsection{Trgovine kartama}
+Korisnik koji je registovan kao posetilac može da kupi kartu za održavanje predstave ako postoji slobodno mesto.  
+Supervizor i organizator mogu da vide slobodna/zauzeta mesta za održavanje predstave
+
+\subsection{Vođenje finansija}
+Administrator pozorišta može da vidi prilive i odlive. Ovo takođe može da se poveže sa prijavom predstave koja može da zahteva određen honorar za glumce
+
+
 \section{Druga sekcija.}
 Ovo je druga sekcija.
 
