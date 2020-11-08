@@ -75,7 +75,7 @@ Momir Adžemović 1005/2020
 
 \abstract
 
-Ovo je sažetak
+Ovo je sažetak.
 
 \newpage
 
@@ -86,24 +86,61 @@ Ovo je sažetak
 \section{Uvod}
 Ovo je uvod.
 
+\section{Analiza sistema}
+
+
 \section{Slučajevi upotrebe.}
 
 \subsection{Organizacija predstave}
-Da bi se predstava odrzala, potrebno je da korisnik koji je registrovan kao organizator kreira predstavu. U IS se belezi predstava sa stanjem “prijava”. Supervizor pozorista moze da odobri ili odbije prijavljenu predstavu. Ako se prijava odobri, prelazi u sledece stanje odobrena. Korisnik koji je registrovan kao glumac moze da se prijavi za jednu (ili vise) uloga. Svaka odobrena predstava ima ulogu rezerva, za koju moze da se prijavi bilo koji glumac. Supervizor moze da promeni stanje predstave koja ima stanje odobrena i ima popunjena mesta glumca kao u pripremi. 
+\begin{enumerate}
+  \item \textbf{Kratak opis:} Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije. 
+        Proces formiranja podrazumeva prijavu koju mora da odobri supervizor pozorišta, unajmljivanje 
+        glumaca i rezervacija sala za predstave. Neophodno je da organizator konstantno ima uvid u stanje
+        svake predstave za koji je on zadužen.
+  \item \textbf{Učesnici:} \dots
+  \item \textbf{Preduslovi:} \dots
+  \item \textbf{Postuslovi:} \dots
+  \item \textbf{Osnovni tok:} \dots
+  \item \textbf{Alternativni tokovi:} \dots
+  \item \textbf{Podtokovi:} \dots
+  \item \textbf{Specijalni zahtevi:} \dots
+  \item \textbf{Dodatne informacije:} \dots
+% Ovo sve može u tok
+% Da bi se predstava održala, potrebno je da organizator napravi predstavu u okviru IS-a. 
+% Predstava ima inicijalno stanje \textit(prijava). Supervizor pozorišta može da odobri ili 
+% odbije prijavljenu predstavu. Ako se prijavljena predstava odobri, onda predstava prelazi 
+% u stanje \textit{odobrena}. Glumac može da se prijavi za jednu (ili više) uloga za predstavu koja je
+% odobrena. Svaka odobrena predstava ima ulogu rezerva, za koju može da se prijavi bilo koji glumac. 
+% Supervizor može da promeni stanje predstave koja ima stanje odobrena i ima popunjena mesta glumca 
+% kao u pripremi. 
+\end{enumerate}
 
-\subsection{Rezervisanje pozorišnih sala}
-Reditelj predstave u pripremi treba da rezerviše salu za probe. Održavanje predstave takođe mora da ima salu. Dakle treba omogućiti uvid u slobodne sale, kao i rezervacije unapred.
+\subsection{Rezervacija pozorišnih sala}
+\begin{enumerate}
+  \item \textbf{Kratak opis:} Organizator predstave u pripremi treba da rezerviše salu za probu, 
+        audiciju ili konkretnu predstavu. Dakle, treba omogućiti uvid u slobodne sale, 
+        kao i rezervacije unapred.
+\end{enumerate}
 
-\subsection{Održavanje predstave}
-Predstava sa statusom “u pripremi” može da se zakaže za održavanje određenog datuma u određenoj sali. 
-
-\subsection{Trgovine kartama}
-Korisnik koji je registovan kao posetilac može da kupi kartu za održavanje predstave ako postoji slobodno mesto.  
-Supervizor i organizator mogu da vide slobodna/zauzeta mesta za održavanje predstave
+\subsection{Audicije i konkursi za posao}
+\begin{enumerate}
+  \item \textbf{Kratak opis:} Konkursi mogu da podrazumevaju zapošljavanje za stalno ili privremeno
+        (jedna ili više predstava). Konkursi mogu da se odnose na različite uloge kao što su
+        organizator, glumac, itd... Audicije se odnose konkretno za glumce.
+\end{enumerate}
+ 
+\subsection{Kupovina i rezervacija karata}
+\begin{enumerate}
+  \item \textbf{Kratak opis:} Informacioni sistem nudi pregled repertoara. 
+        Svako može da kupi kartu za određenu predstavu ako postoji slobodno mesto.
+        Alternativa je da se vrši rezervacija karte koja se kasnije može da kupi u blagajni. 
+\end{enumerate}
 
 \subsection{Vođenje finansija}
-Administrator pozorišta može da vidi prilive i odlive. Ovo takođe može da se poveže sa prijavom predstave koja može da zahteva određen honorar za glumce
-
+\begin{enumerate}
+  \item \textbf{Kratak opis:} Supervizor pozorišta može da vidi prilive i odlive za ceo sistem ili
+        neku konkretnu predstavu. 
+\end{enumerate}
 
 \section{Druga sekcija.}
 Ovo je druga sekcija.
