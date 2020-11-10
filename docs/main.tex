@@ -6,12 +6,13 @@
 \usepackage[T1]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
-% \usepackage[margin=1.5in]{geometry}
+\usepackage[margin=1.0in]{geometry}
 \usepackage[table]{xcolor}
 \usepackage{tocloft}
 \usepackage{float}
 \addtolength{\cftsecnumwidth}{10pt}
 \usepackage{wasysym}
+
 
 \usepackage[english,serbian]{babel}
 %\usepackage[english,serbianc]{babel} 
@@ -56,6 +57,10 @@
   tabsize=2,	                     % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
+\usepackage{enumitem}
+\newlist{legal}{enumerate}{10}
+\setlist[legal]{label*=\arabic*.}
 
 \begin{document}
 
@@ -129,12 +134,120 @@ Ovo je uvod.
         organizator, glumac, itd... Audicije se odnose konkretno za glumce.
 \end{enumerate}
  
-\subsection{Kupovina i rezervacija karata}
+\subsection{Prodaja karata}
+\textbf{Napomena:} Sekcija je u izradi i neku delovi će biti ,,pretumbani`` ...
+
+Prodaja karata predstavlja slučaj upotrebe za prodaju karata korisnicima za predstavu
+
+\subsubsection{Definisanje broja karata za predstavu}
+
+\subsubsection{Ažuriranje repertoara}
+
+\subsubsection{Registracija i prijavljivanje na stranicu pozorišta}
+
+\subsubsection{Onlajn kupovina karata i rezervacija}
+
+\textbf{Napomena:} Možda budem podelio na dva slučaja upotrebe.
+
 \begin{enumerate}
-  \item \textbf{Kratak opis:} Informacioni sistem nudi pregled repertoara. 
+  \item \textbf{Kratak opis:} Informacioni sistem nudi pregled repertoara korisnicima. 
         Svako može da kupi kartu za određenu predstavu ako postoji slobodno mesto.
         Alternativa je da se vrši rezervacija karte koja se kasnije može da kupi u blagajni. 
+  \item \textbf{Učesnici:} Registrovan korisnik koji želi da kupi ili rezerviše kartu.
+  \item \textbf{Preduslovi:} 
+        \begin{itemize}
+          \item Korisnik mora da bude registrovan sa odgovarajućim mejlom. 
+          \item Korisnik mora da ima pristup internetu.
+          \item Sistem mora da bude u funkciji.
+          \item Sistem mora da bude pouzdan. 
+          \item Mora da postoji barem jedno slobodno mesto za željenu predstavu, a samim tim mora da 
+                postoji barem jedna aktivna predstava. 
+          \item Ukoliko korisnik želi da kupi kartu, mora da ima karticu za online plaćanje (ili 
+                alternativu neku).
+        \end{itemize}
+  \item \textbf{Postuslovi:} 
+        \begin{itemize}
+          \item Korisnik je dobio potvrdu na mejl sa kodom kupljenje ili rezervisane karte.
+          \item Baza je ažurirana tj. broj karata za predstavu je umanjen za jedan.
+        \end{itemize}
+  \item \textbf{Osnovni tok:}
+        \begin{legal}
+          \item Prijavljen korisnik pristupa stranici za kupovinu karata. 
+          \item Sistem učitava podatke iz baze i prikazuje repertoar.
+          \item Korisnik klikom bira željenu predstavu.
+          \item Sistem otvara korisniku formu za rezervaciju ili kupovinu karte.
+          \item Korisnik kupuje ili rezerviše kartu.
+          \item Sistem proverava formu i ažurira bazu podataka.
+          \item Sistem šalje mejl sa odgovarajućim kodom korisniku na mejl.
+          \item Sistem prikazuje korisniku poruku o uspešnoj kupovili ili registraciji i podseća
+                korisnika da proveri mejl.
+        \end{legal}
+  \item \textbf{Alternativni tokovi:} 
+        \begin{itemize}
+          \item \textbf{A1. Korisnik nije prijavljen} 
+              \begin{legal}
+                \item Sistem otvara korisniku stranicu za prijavljivanje.
+                \item Korisnik unosi odgovarajuće podatke i prijavljuje se.
+                \item Sistem proverava da li se uneti podaci poklapaju sa podacima iz baze.
+                \item Sistem započinje se sesiju korisnika (korisnik je prijavljen).
+                \item Proces se nastavlja u \textbf{koraku 1}.
+              \end{legal}
+          \item \textbf{A2. Korisnik je već rezervisao kartu}
+              \begin{legal}
+                \item Sistem prikazuje korisniku obaveštenje o nemogućnosti rezervacije više od jedne karte.
+                \item Korisnik pretiska dugme za potvrdu.
+                \item Proces se nastavlja u \textbf{koraku 2}.
+              \end{legal}
+          \item \textbf{A3. Neuspešna kupovina karte}
+              \begin{legal}
+                \item Sistem prikazuje korisniku obaveštenje o neuspelom plaćanju sa odgovarajućim
+                      razlogom, ako je taj razlog poznat sistemu.
+                \item Korisnik pretiska dugme za potvrdu.
+                \item Proces se nastavlja u \textbf{koraku 5}.
+              \end{legal}
+          \item \textbf{A4. Tokom popunjavanja forme su rasprodate karte su se rasprodale}
+              \begin{legal}
+                \item Sistem prikazuje korisniku obaveštenje o rasprodatim kartama.
+                \item Korisnik pretiska dugme za potvrdu.
+                \item Proces se nastavlja u \textbf{koraku 2}.
+              \end{legal}
+        \end{itemize}
+  \item \textbf{Podtokovi:}
+          \begin{itemize}
+            \item \textbf{5.1. Kupovina karte}
+                \begin{legal}
+                  \item Korisnik bira opciju za kupovinu karte.
+                  \item Korisnik Pretiska dugme za potvrdu.
+                  \item Sistem prikazuje korisniku opcije plaćanja.
+                  \item Korisnik bira željeni način plaćanja.
+                  \item Sistem prikazuje korisniku formu za plaćanje.
+                  \item Korisnik popunjava formu.
+                  \item Korisnik pretiska dugme za potvrdu.
+                  \item Sistem izvršava transakciju plaćanja sa odgovarajućim proveravama.
+                \end{legal}
+            \item \textbf{5.2. Rezervacija karte}
+                \begin{legal}
+                  \item Korisnik bira opciju za rezervaciju karte.
+                  \item Korisnik pretiska dugme za potvrdu.
+                \end{legal}
+          \end{itemize}
+  \item \textbf{Specijalni zahtevi:} Mejl mora da stigne korisniku u roku od 5 minuta nakon što 
+        je prikaza poruka o uspešnoj kupovini odnosno rezervaciji.
+  \item \textbf{Dodatne informacije:} Podaci koji su potrebni za prijavu su korisničko ime ili mejl, i 
+        šifra naloga.
 \end{enumerate}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=50mm,height=20mm]{../diagrams/usecase_prodaja_karata.jpg}
+  \end{center}
+\end{figure}
+
+\subsubsection{Kupovina karata uživo}
+
+\subsubsection{Zahtev za povraćaj novca}
+
+\subsubsection{Povraćaj novca za otkazanu predstavu}
 
 \subsection{Vođenje finansija}
 \begin{enumerate}
