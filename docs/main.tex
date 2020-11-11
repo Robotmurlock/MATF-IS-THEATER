@@ -100,30 +100,164 @@ dela:\cite{hamilton_theatre_producing_the_drama}
 \section{Slučajevi upotrebe}
 
 \subsection{Organizacija predstave}
-\begin{enumerate}
-  \item \textbf{Kratak opis:} Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije. 
-        Proces formiranja podrazumeva prijavu koju mora da odobri supervizor pozorišta, unajmljivanje 
-        glumaca i rezervacija sala za predstave. Neophodno je da organizator konstantno ima uvid u stanje
-        svake predstave za koji je on zadužen.
-  \item \textbf{Učesnici:} \dots
-  \item \textbf{Preduslovi:} \dots
-  \item \textbf{Postuslovi:} \dots
-  \item \textbf{Osnovni tok:} \dots
-  \item \textbf{Alternativni tokovi:} \dots
-  \item \textbf{Podtokovi:} \dots
-  \item \textbf{Specijalni zahtevi:} \dots
-  \item \textbf{Dodatne informacije:} \dots
-% Adaptacija predstave (dramaturg)
+Proces organizacije predstave počinje prijavom koju popunjava i podnosi organizator. Predstavu sa statusom "prijavljena" mora da odobri supervizor pozorišta. Kada se prijavljena predstava odobri, onda predstava prelazi u stanje "u pripremi". 
 
-% Ovo sve može u tok
-% Da bi se predstava održala, potrebno je da organizator napravi predstavu u okviru IS-a. 
-% Predstava ima inicijalno stanje \textit(prijava). Supervizor pozorišta može da odobri ili 
-% odbije prijavljenu predstavu. Ako se prijavljena predstava odobri, onda predstava prelazi 
-% u stanje \textit{odobrena}. Glumac može da se prijavi za jednu (ili više) uloga za predstavu koja je
-% odobrena. Svaka odobrena predstava ima ulogu rezerva, za koju može da se prijavi bilo koji glumac. 
-% Supervizor može da promeni stanje predstave koja ima stanje odobrena i ima popunjena mesta glumca 
-% kao u pripremi. 
-\end{enumerate}
+Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije, dok supervizor izvršava administrativne zadatke vezane za pozorište. Neophodno je da organizator konstantno ima uvid u stanje svake predstave za koji je on zadužen. 
+
+
+\subsubsection{Kreiranje predstave} \label{Kreiranje predstave}
+\noindent\textbf{Kratak opis:} Da bi se predstava održala, organizator mora da je kreira u informacionom sistemu. 
+
+\noindent\textbf{Učesnici:} Zaposleni koji je organizator predstave
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Postoji zaposleni koji je organizator predstave.
+    \item Postoji scenario za predstavu.
+    \item Organizator je ugovorio izvođenje predstave sa rediteljem.
+    \item Reditelj je odredio glumce.
+    \item Procenjen je budžet koji uključuje platu glumaca tokom pripreme i izvođenja, dužinu pripreme, i elemente scene.
+    \item Reditelj i glumci su registrovani u sistemu kao zaposleni.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Kreirana predstava je sačuvana u sistemu sa statusom "prijavljena".
+    \item Organizator može da vidi prijavljenu predstavu kada je prijavljen na sistem.
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Organizator u sistemu otvara stranu za kreiranje predstave.
+    \item Organizator unosi u formu potrebne informacije, uključujući ime i opis predstave, reditelja, glumce i uloge. 
+    \item Organizator evidentira prijavu predstave u sistem klikom na "Pošalji prijavu". 
+    \item Supervizor se obaveštava mailom o prijavljenoj predstavi.
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+  \item \textbf{A1. Informacije o prijavi su nepotpune} 
+      \begin{legal}
+        \item Organizator u koraku 2. ne unosi sve informacije, ili nije siguran da li su informacije finalne. 
+        \item Organizator čuva predstavu sa statusom "nedovršena" klikom na "Sačuvaj nedovršenu prijavu".
+      \end{legal}
+  \item \textbf{A2. Neki od uključenih zaposlenih nije evidentiran u sistemu} 
+      \begin{legal}
+        \item Organizator ne može da dovrši korak 2 jer jedan od zaposlenih nije evidentiran u sistemu, pa čuva nedovršenu prijavu (Alternativni tok A1)
+        \item Supervizor evidentira zaposlenog u sistemu procesom opisanim u \ref{Registrovanje zaposlenih}.
+        \item Organizator nastavlja proces kroz \ref{Dovršavanje prijave}
+      \end{legal}
+\end{itemize}
+
+\noindent\textbf{Dodatne informacije:} Podrazumeva se da je predstava ugovorena drugim putevima - nizom mailova, telefonskih razgovora i sastanaka. Zbog komplikovane prirode međuljudskih veza u ovoj sferi, informacioni sistem se bavi isključivo ugovorenom predstavom. 
+
+\subsubsection{Odobravanje predstave}
+\noindent\textbf{Kratak opis:} Kada je predstava prijavljena, supervizor pregleda informacije, uzimajući u obzir aktuelni i budući repertoar i interesovanje publike za isti, kao i budžet pozorišta, i odobrava predstavu. 
+
+\noindent\textbf{Učesnici:} Supervizor pozorišta.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Određena predstava je evidentirana u sistemu kao "prijavljena".
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Predstava koja je bila evidentirana kao "prijavljena" je evidentirana kao "u pripremi"
+    \item Organizator može da vidi odgovarajući status predstave nakon prijave na sistem.
+    \item Organizator može da rezerviše sale za probu i održavanje predstave. 
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Supervizor pretražuje predstave sa statusom "prijavljena".
+    \item Supervizor otvara stranu za prikaz informacija o određenoj prijavljenoj predstavi. 
+    \item Nakon analize informacija, supervizor odobrava predstavu. 
+    \item Organizator se obaveštava mailom o odobrenju. 
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+  \item \textbf{A1. Predstava je odbijena} 
+      \begin{legal}
+        \item Supervizor u 3. koraku odbija prijavu predstave uz obrazloženje.
+        \item Organizator se obaveštava mailom o odbijanju uz obrazloženje. 
+      \end{legal}
+\end{itemize}
+
+
+\subsubsection{Dovršavanje prijave} \label{Dovršavanje prijave}
+\noindent\textbf{Kratak opis:} U slučaju da je organizator sačuvao prijavu kao nedovršenu, može da je izmeni ili dopuni, i konačno pošalje. 
+
+\noindent\textbf{Učesnici:} Organizator predstave
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Organizator je započeo prijavu predstave i sačuvao je kao nedovršenu.
+    \item Organizator može da vidi nedovršenu predstavu nakon prijave na sistem.
+    \item Svi preduslovi slučaja \ref{Kreiranje predstave}.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Predstava koja je bila evidentirana kao "nedovršena" je sada evidentirana kao "prijavljena".
+    \item Svi postuslovi slučaja \ref{Kreiranje predstave}.
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Organizator pretražuje nedovršene prijave.
+    \item Organizator otvara određenu nedovšenu prijavu. 
+    \item Organizator dopunjava, odnosno menja željene informacije.
+    \item Organizator evidentira prijavu predstave u sistem klikom na "Pošalji prijavu". 
+    \item Supervizor se obaveštava mailom o prijavljenoj predstavi.
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+  \item \textbf{A1. Informacije o prijavi su nepotpune} 
+      \begin{legal}
+        \item Organizator u koraku 2. ne unosi sve informacije, ili nije siguran da li su informacije finalne. 
+        \item Organizator čuva predstavu sa statusom "nedovršena" klikom na "Sačuvaj nedovršenu prijavu".
+      \end{legal}
+\end{itemize}
+
+
+\subsubsection{Registrovanje zaposlenih} \label{Registrovanje zaposlenih}
+\noindent\textbf{Kratak opis:} Da bi zaposleni bili uključeni u predstavu, moraju biti registrovani u sistemu. Supervizor po sklapanju ugovora o radu sa zaposlenima unosi njihove informacije u sistem
+
+\noindent\textbf{Učesnici:} Supervizor
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Pozorište je sklopilo ugovor o radu sa osobom A.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Osoba A je eveidentirana kao zaposleni u sistemu.
+    \item Osoba A može da se prijavi na sistem.
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Supervizor otvara formu za evidentiranje zaposlenog.
+    \item Supervizor popunjava formu, unoseći sve potrebne informacije uključujući Ime, Prezime, JMBG i email adresu. 
+    \item Zaposleni je obavešten o kreiranom profilu putem emaila. 
+    \item Zaposleni klikom na link u emailu koji mu je stigao odlazi na stranicu gde kreira šifru za svoj nalog i potvrđuje registraciju.  
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+  \item \textbf{A1. Zaposleni ne potvrđuje registraciju} 
+      \begin{legal}
+        \item Zaposleni nije ispunio 4. korak. Zaposleni ne može da se prijavi na sistem ali može da bude uključen u prijavu predstave. 
+      \end{legal}
+\end{itemize}
+
+
+
+% --------------------------------------------------------------------------------------------------
 
 \subsection{Rezervacija pozorišnih sala}
 \begin{enumerate}
