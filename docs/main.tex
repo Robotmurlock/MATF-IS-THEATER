@@ -275,17 +275,16 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
  
 \subsection{Prodaja karata}
 Prodaja karata je proces koji sledi nakon što je određen datum, rezervisana sala i dodeljene uloge
-zaposlenim. Tada je moguće odrediti preciznije budžet potreban za dalju realizaciju predstave, pa
+zaposlenim. Tada je moguće preciznije odrediti potreban budžet za dalju realizaciju predstave, pa
 samim tim i minimalni broj kupljenih karata za izvođenje. Na osnovu rezervisane sale (i potencijalno još 
-nekih drugih faktora, kao što je epidemija ili slično), određuje se broj karata za prodaju. Budući
-gledaoci predstave mogu da kupe ili rezervišu kartu za pozorište preko veb stranice pozorišta.
+nekih drugih faktora, kao što je epidemija ili slično), određuje se broj karata za prodaju. Gledaoci 
+predstave mogu da kupe ili rezervišu kartu za pozorište preko veb stranice pozorišta.
 
 \subsubsection{Definisanje broja karata za predstavu}
 \noindent\textbf{Kratak opis:} Organizator predstave može da definiše broj karata na osnovu rezervisane
-sale za izvođenje predstave. Potrebno je da supervizor pozorišta odobri predstavu za izvođenje. 
-Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
+sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranici pozorište.\\
 
-\noindent\textbf{Učesnici:} Organizator predstave i supervizor pozorišta.\\
+\noindent\textbf{Učesnici:} Organizator predstave.\\
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
@@ -306,32 +305,38 @@ Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
     \item Organizator unosi podatke za prijavljivanje na sistem.
-    \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
+    \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je on zadužen.
     \item Organizator bira predstavu koju želi da ažurira.
     \item Sistem prikazuje informacije o predstavi.
-    \item Organizator unosi broj karata za prodaju i potencijalno dodaje napomenu.
+    \item Organizator unosi broj karata za prodaju i opciono dodaje napomenu.
     \item Sistem proverava unete podatke.
     \item Sistem ažurira bazu podataka.
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
 \begin{itemize}
-  \item \textbf{A1. Neuspelo prijavljivanje} 
+  \item \textbf{A1. Neuspelo prijavljivanje (korak 1)} 
       \begin{legal}
         \item Sistem prikazuje poruku o grešci pri prijavljivanju..
         \item Proces se nastavlja u \textbf{koraku 1}.
       \end{legal}
-  \item \textbf{A2. Podaci o broju karata nisu validni} 
+  \item \textbf{A2. Podaci o broju karata nisu validni (korak 6)} 
     \begin{legal}
       \item Sistem prikazuje poruku o grešci.
       \item Proces se nastavlja u \textbf{koraku 5}.
     \end{legal}
 \end{itemize}
 
-\noindent\textbf{Dodatne informacije:} Postoji period osvežavanja repertoara na stranici na osnovu
-  sadržaja baze podataka.
+\noindent\textbf{Dodatne informacije:} 
+  \begin{itemize}
+    \item Postoji period osvežavanja repertoara na stranici na osnovu
+          sadržaja baze podataka. 
+    \item Sistem automatki popunjava vrednost polja za broj karata sa podrazumevanom
+          vrednošću koja odgovara broju mesta u sali u kojoj je predstava zakazana.
+  \end{itemize}
 
 \subsubsection{Registracija i prijavljivanje na stranicu pozorišta}
+  \textbf{Napomena:} Registracija i prijavljivanje je potrebno izdvojiti u poseban slučaj upotrebe.
 
 \subsubsection{Onlajn kupovina karata i rezervacija}
 
@@ -358,7 +363,8 @@ Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
     \item Korisnik je dobio potvrdu na mejl sa kodom kupljenje ili rezervisane karte.
-    \item Baza je ažurirana tj. broj karata za predstavu je umanjen za jedan.
+    \item Ako je korisnik kupio kartu, onda je takođe dobio mejl sa informacijama računa.
+    \item Baza je ažurirana tj. broj karata za predstavu je umanjen za broj kupljenih karata.
   \end{itemize}
 
 \noindent\textbf{Osnovni tok:}
@@ -379,25 +385,23 @@ Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
     \item \textbf{A1. Korisnik nije prijavljen} 
         \begin{legal}
           \item Sistem otvara korisniku stranicu za prijavljivanje.
-          \item Korisnik unosi odgovarajuće podatke i prijavljuje se.
-          \item Sistem proverava da li se uneti podaci poklapaju sa podacima iz baze.
-          \item Sistem započinje se sesiju korisnika (korisnik je prijavljen).
-          \item Proces se nastavlja u \textbf{koraku 1}.
+          \item Korisnik se prijavljuje.
+          \item Proces se nastavlja u \textbf{koraku 2}.
         \end{legal}
-    \item \textbf{A2. Korisnik je već rezervisao kartu}
+    \item \textbf{A2. Korisnik je već rezervisao kartu (korak 5)}
         \begin{legal}
           \item Sistem prikazuje korisniku obaveštenje o nemogućnosti rezervacije više od jedne karte.
           \item Korisnik pretiska dugme za potvrdu.
           \item Proces se nastavlja u \textbf{koraku 2}.
         \end{legal}
-    \item \textbf{A3. Neuspešna kupovina karte}
+    \item \textbf{A3. Neuspešna kupovina karte (korak 5)}
         \begin{legal}
           \item Sistem prikazuje korisniku obaveštenje o neuspelom plaćanju sa odgovarajućim
                 razlogom, ako je taj razlog poznat sistemu.
           \item Korisnik pretiska dugme za potvrdu.
           \item Proces se nastavlja u \textbf{koraku 5}.
         \end{legal}
-    \item \textbf{A4. Tokom popunjavanja forme su rasprodate karte su se rasprodale}
+    \item \textbf{A4. Tokom popunjavanja forme su rasprodate karte su se rasprodale (korak 6)}
         \begin{legal}
           \item Sistem prikazuje korisniku obaveštenje o rasprodatim kartama.
           \item Korisnik pretiska dugme za potvrdu.
@@ -410,6 +414,9 @@ Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
     \item \textbf{5.1. Kupovina karte}
         \begin{legal}
           \item Korisnik bira opciju za kupovinu karte.
+          \item Sistem prikazuje korisniku stranicu, gde može da se izabere broj karata.
+          \item Korisnik unosi željeni broj karata.
+          \item Sistem izračunava cenu i prikazuje tu cenu korisniku.
           \item Korisnik Pretiska dugme za potvrdu.
           \item Sistem prikazuje korisniku opcije plaćanja.
           \item Korisnik bira željeni način plaćanja.
@@ -438,11 +445,77 @@ Nakon odobrenja se ažurira repertoar na stranici pozorište.\\
 \end{figure}
 
 \subsubsection{Kupovina karata uživo}
-\noindent\textbf{Kratak opis:} Gledaoci koji su rezervisali kartu mogu da kupe kartu u pozorištu.
-Gledaoci koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje postoji mesta.
+\noindent\textbf{Kratak opis:} Klijenti koji su rezervisali kartu mogu da kupe kartu u pozorištu.
+Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje postoji mesta.
+
+\noindent\textbf{Učesnici:} 
+  \begin{itemize}
+    \item Klijent koji želi da kupi ili rezerviše kartu.
+    \item Prodavac karata koji je zaposlen u pozorištu.
+  \end{itemize}
+
+  \noindent\textbf{Preduslovi:} 
+  \begin{itemize}
+    \item Klijent mora da ima rezervisanu kartu ili mora biti slobodan broj mesta.
+  \end{itemize}
+
+  \noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Klijent ima mogućnost da prisustvuje predstavi za koju ima kupljenu kartu.
+  \end{itemize}
+
+  \noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Klijent saopštava prodavcu karata koje karte želi da kupi.
+    \item Prodavac zahteva račun za kupovinu od sistema.
+    \item Sistem prikazuje prodavcu račun za kupovinu.
+    \item Prodavac saopštava ukupnu cenu klijentu.
+    \item Klijent izvršava plaćanje.
+    \item Prodavac potvrđuje uplatu.
+    \item Sistem štampa odgovarajuće karte.
+    \item Prodavac daje klijentu karte.
+  \end{legal}
+
+  \noindent\textbf{Alternativni tokovi:} 
+  \begin{itemize}
+    \item \textbf{A1. Ne postoji dovoljan broj karata za brodaju (korak 1.1.2)} 
+        \begin{legal}
+          \item Prodavac saopštava klijentu da ne postoji dovoljan broj karata
+          \item Proces se nastavlja u \textbf{koraku 1}.
+        \end{legal}
+    \item \textbf{A2. Kodovi koje je klijent saopštio nisu validni (korak 1.2.2)} 
+        \begin{legal}
+          \item Prodavac saopštava klijentu da rezervacije nisu važeće.
+          \item Proces se nastavlja u \textbf{koraku 1}.
+        \end{legal}
+    \item \textbf{A3. Klijent ipak ne želi da izvrši plaćanje (korak 5)} 
+        \begin{legal}
+          \item Prodavac stornira račun.
+          \item Proces se nastavlja u \textbf{koraku 1}.
+        \end{legal}
+  \end{itemize}
+
+  \noindent\textbf{Podtokovi:}
+  \begin{itemize}
+    \item \textbf{1.1. Klijent nema rezervisane karte}
+        \begin{legal}
+          \item Prodavac proverava da li ima slobodnih željenih karata tako što unosi upit preko odgovarajućeg interfejsa.
+          \item Sistem daje prodavcu informacije o broju slobodnih karata za dati upit.
+        \end{legal}
+    \item \textbf{1.2. Klijent ima rezervisane karte}
+        \begin{legal}
+          \item Prodavac zahteva odgovarajuće kodove za rezervisane karte.
+          \item Kupac daje prodavcu kodove za rezervisane karte.
+          \item Prodavac provera da li su kodovi validni tako što ih unosi u sistem.
+          \item Sistem potvrđuje validnost kodova.
+        \end{legal}
+  \end{itemize}
+
+\noindent\textbf{Dodatne informacije:} Ukoliko klijenti ne kupe rezervisane karte do nekog roka (pred početak predstave),
+gube se rezervacije i time se povećava broj slobodnih karata.
 
 \subsubsection{Zahtev za povraćaj novca}  
-\noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj nova pre ili posle izvođenja predstave.
+\noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.
 
 \subsubsection{Povraćaj novca za otkazanu predstavu}
 \noindent\textbf{Kratak opis:} Ukoliko organizator ili supervizor otkažu predstavu, potrebno je
