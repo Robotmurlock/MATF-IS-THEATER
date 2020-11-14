@@ -261,10 +261,131 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \subsection{Rezervacija pozorišnih sala}
 \begin{enumerate}
-  \item \textbf{Kratak opis:} Organizator predstave u pripremi treba da rezerviše salu za probu, 
-        audiciju ili konkretnu predstavu. Dakle, treba omogućiti uvid u slobodne sale, 
-        kao i rezervacije unapred.
+  \item \textbf{Kratak opis:} Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu predstavu. Dakle, treba omogućiti uvid u slobodne sale, 
+        kao i rezervacije unapred. Ukoliko dodje do promene termina predstave ili probe, potrebno je promeniti i termin za salu. Organizator ima mogućnost promene sale ukoliko je druga sala slobodna za dati termin. 
 \end{enumerate}
+\subsubsection{Prijavljivanje sale za predstavu ili probu}
+\noindent\textbf{Kratak opis:} Kada je predstava odobrena, organizator rezerviše salu za određeni datum i vreme za održavanja predstave ili probe. 
+
+\noindent\textbf{Učesnici:} Organizator pozorišta.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Određena predstava je evidentirana u sistemu kao "odobrena".
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Sala za održavanje predstave ili probe je rezervisana za određeni datum i vreme
+    \item Organizator i glumci imaju uvid u kojoj se sali održava predstava ili proba  nakon prijave na sistem.
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+  \item Organizator unosi podatke za prijavljivanje na sistem.
+    \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
+    \item Organizator bira predstavu sa statusom "odobrena" kojoj želi da dodeli salu .
+    \item Sistem prikazuje informacije o predstavi.
+    \item Organizator unosi datum i vreme održavanja predstave
+    \item Organizator unosi dužinu trajanja predstave
+    \item Sistem prikazuje slobodne sale za dati termin.
+    \item Organizator dodeljuje slobodnu salu datoj predstavi za određeni termin.
+    \item Sistem ažurira bazu podataka.
+    \item Glumci se obaveštavaju mailom o sali za održavanje predstave ili probe. 
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+ \item \textbf{A1. Neuspelo prijavljivanje} 
+      \begin{legal}
+        \item Sistem prikazuje poruku o grešci pri prijavljivanju..
+        \item Proces se nastavlja u \textbf{koraku 1}.
+      \end{legal}
+  \item \textbf{A7. Sve sale su zauzete za odabrani termin} 
+    \begin{legal}
+      \item Sistem prikazuje poruku da su sve sale zauzete za dati termin.
+      \item Proces se nastavlja u \textbf{koraku 5}.
+    \end{legal}
+\end{itemize}
+\subsubsection{Odjavljivanje sale za predstavu}
+\noindent\textbf{Kratak opis:} Predstava je odložena i organizator odjavljuje datu salu
+
+\noindent\textbf{Učesnici:} Organizator pozorišta.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Predstavi je dodeljena sala
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Sala je oslobođena za dati termin
+    \item Predstavi nije dodeljena nijedna sala
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+  \item Organizator unosi podatke za prijavljivanje na sistem.
+    \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
+    \item Organizator bira predstavu kojoj je dodeljena sala .
+    \item Sistem prikazuje informacije o predstavi.
+    \item Organizator odjavljuje salu za dati termin
+    \item Sistem ažurira bazu podataka.
+    \item Glumci se obaveštavaju mailom o oslobođenom terminu za datu salu
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+ \item \textbf{A1. Neuspelo prijavljivanje} 
+      \begin{legal}
+        \item Sistem prikazuje poruku o grešci pri prijavljivanju.
+        \item Proces se nastavlja u \textbf{koraku 1}.
+      \end{legal}
+  
+\end{itemize}
+
+
+\subsubsection{Promena sale za održavanje predstave}
+\noindent\textbf{Kratak opis:} Organizator može da promeni salu za održavanje predstave ukoliko je zbog velikog interesovanja gledalaca potrebna sala sa većim kapacitetom
+
+\noindent\textbf{Učesnici:} Organizator pozorišta.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Predstava ili probi je dodeljena nova sala
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Predstavi ili probi je promenjena  sala za održavanje
+    \item Prvobitno izabrana sala je oslobođena za dati termin
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+  \item Organizator unosi podatke za prijavljivanje na sistem.
+    \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
+    \item Organizator bira predstavu kojoj je dodeljena sala .
+    \item Sistem prikazuje informacije o predstavi.
+    \item Sistem prikazuje slobodne sale za dati termin.
+    \item Organizator dodeljuje slobodnu salu datoj predstavi za određeni termin.
+     \item Sistem ažurira bazu podataka.
+    \item Glumci se obaveštavaju mailom o promeni sale za održavanje predstave ili probe
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+ \item \textbf{A1. Neuspelo prijavljivanje} 
+      \begin{legal}
+        \item Sistem prikazuje poruku o grešci pri prijavljivanju..
+        \item Proces se nastavlja u \textbf{koraku 1}.
+      \end{legal}
+       \item \textbf{A5. Sve sale su zauzete za odabrani termin} 
+    \begin{legal}
+      \item Sistem prikazuje poruku da su sve sale zauzete za dati termin.
+      \item Slučaj upotrebe se ovde završava
+    \end{legal}
+\end{itemize}
 
 \subsection{Audicije i konkursi za posao}
 \begin{enumerate}
