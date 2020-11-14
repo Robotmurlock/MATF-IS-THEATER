@@ -272,13 +272,25 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
         (jedna ili više predstava). Konkursi mogu da se odnose na različite uloge kao što su
         organizator, glumac, itd... Audicije se odnose konkretno za glumce.
 \end{enumerate}
- 
+
+\newpage
 \subsection{Prodaja karata}
 Prodaja karata je proces koji sledi nakon što je određen datum, rezervisana sala i dodeljene uloge
 zaposlenim. Tada je moguće preciznije odrediti potreban budžet za dalju realizaciju predstave, pa
 samim tim i minimalni broj kupljenih karata za izvođenje. Na osnovu rezervisane sale (i potencijalno još 
 nekih drugih faktora, kao što je epidemija ili slično), određuje se broj karata za prodaju. Gledaoci 
-predstave mogu da kupe ili rezervišu kartu za pozorište preko veb stranice pozorišta.
+(klijenti) predstave mogu da kupe ili rezervišu kartu za pozorište preko veb stranice pozorišta. 
+Takođe, klijenti mogu da kupe rezervisanu kartu ili nerezervisanu kartu ako nisu rasprodate na blagajni.
+Klijent ima pravo da zatraži povraćaj novca za kupljenu kartu, a slučaju da se cela predstava otkaže,
+potrebno je uz potvrdu organizatora da se izvrši povraćaj novca svim klijentima.
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_prodaja_karata.jpg}
+  \end{center}
+  \caption{Prodaja karata}
+  \label{usecase_prodaja_karata}
+\end{figure}
 
 \subsubsection{Definisanje broja karata za predstavu}
 \noindent\textbf{Kratak opis:} Organizator predstave može da definiše broj karata na osnovu rezervisane
@@ -339,8 +351,6 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
   \textbf{Napomena:} Registracija i prijavljivanje je potrebno izdvojiti u poseban slučaj upotrebe.
 
 \subsubsection{Onlajn kupovina karata i rezervacija}
-
-\textbf{Napomena:} Možda budem podelio na dva slučaja upotrebe (prethodni).\\
 
 \noindent\textbf{Kratak opis:} Informacioni sistem nudi pregled repertoara korisnicima. 
         Svako može da kupi kartu za određenu predstavu ako postoji slobodno mesto.
@@ -438,20 +448,14 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
 \noindent\textbf{Dodatne informacije:} Podaci koji su potrebni za prijavu su korisničko ime ili mejl, i 
         šifra naloga.
 
-\begin{figure}[H]
-  \begin{center}
-      \includegraphics[width=50mm,height=20mm]{../diagrams/usecase_prodaja_karata.jpg}
-  \end{center}
-\end{figure}
-
-\subsubsection{Kupovina karata uživo}
+\subsubsection{Kupovina karata na blagajni}
 \noindent\textbf{Kratak opis:} Klijenti koji su rezervisali kartu mogu da kupe kartu u pozorištu.
 Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje postoji mesta.
 
 \noindent\textbf{Učesnici:} 
   \begin{itemize}
     \item Klijent koji želi da kupi ili rezerviše kartu.
-    \item Prodavac karata koji je zaposlen u pozorištu.
+    \item Blagajnik koji je zaposlen u pozorištu.
   \end{itemize}
 
   \noindent\textbf{Preduslovi:} 
@@ -467,30 +471,30 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
   \noindent\textbf{Osnovni tok:}
   \begin{legal}
     \item Klijent saopštava prodavcu karata koje karte želi da kupi.
-    \item Prodavac zahteva račun za kupovinu od sistema.
+    \item Blagajnik zahteva račun za kupovinu od sistema.
     \item Sistem prikazuje prodavcu račun za kupovinu.
-    \item Prodavac saopštava ukupnu cenu klijentu.
+    \item Blagajnik saopštava ukupnu cenu klijentu.
     \item Klijent izvršava plaćanje.
-    \item Prodavac potvrđuje uplatu.
+    \item Blagajnik potvrđuje uplatu.
     \item Sistem štampa odgovarajuće karte.
-    \item Prodavac daje klijentu karte.
+    \item Blagajnik daje klijentu karte.
   \end{legal}
 
   \noindent\textbf{Alternativni tokovi:} 
   \begin{itemize}
     \item \textbf{A1. Ne postoji dovoljan broj karata za brodaju (korak 1.1.2)} 
         \begin{legal}
-          \item Prodavac saopštava klijentu da ne postoji dovoljan broj karata
+          \item Blagajnik saopštava klijentu da ne postoji dovoljan broj karata
           \item Proces se nastavlja u \textbf{koraku 1}.
         \end{legal}
     \item \textbf{A2. Kodovi koje je klijent saopštio nisu validni (korak 1.2.2)} 
         \begin{legal}
-          \item Prodavac saopštava klijentu da rezervacije nisu važeće.
+          \item Blagajnik saopštava klijentu da rezervacije nisu važeće.
           \item Proces se nastavlja u \textbf{koraku 1}.
         \end{legal}
     \item \textbf{A3. Klijent ipak ne želi da izvrši plaćanje (korak 5)} 
         \begin{legal}
-          \item Prodavac stornira račun.
+          \item Blagajnik stornira račun.
           \item Proces se nastavlja u \textbf{koraku 1}.
         \end{legal}
   \end{itemize}
@@ -499,14 +503,14 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
   \begin{itemize}
     \item \textbf{1.1. Klijent nema rezervisane karte}
         \begin{legal}
-          \item Prodavac proverava da li ima slobodnih željenih karata tako što unosi upit preko odgovarajućeg interfejsa.
+          \item Blagajnik proverava da li ima slobodnih željenih karata tako što unosi upit preko odgovarajućeg interfejsa.
           \item Sistem daje prodavcu informacije o broju slobodnih karata za dati upit.
         \end{legal}
     \item \textbf{1.2. Klijent ima rezervisane karte}
         \begin{legal}
-          \item Prodavac zahteva odgovarajuće kodove za rezervisane karte.
+          \item Blagajnik zahteva odgovarajuće kodove za rezervisane karte.
           \item Kupac daje prodavcu kodove za rezervisane karte.
-          \item Prodavac provera da li su kodovi validni tako što ih unosi u sistem.
+          \item Blagajnik provera da li su kodovi validni tako što ih unosi u sistem.
           \item Sistem potvrđuje validnost kodova.
         \end{legal}
   \end{itemize}
@@ -514,7 +518,7 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
 \noindent\textbf{Dodatne informacije:} Ukoliko klijenti ne kupe rezervisane karte do nekog roka (pred početak predstave),
 gube se rezervacije i time se povećava broj slobodnih karata.
 
-\subsubsection{Zahtev za povraćaj novca}  
+\subsubsection{Zahtev za povraćaj novca za kupljenu kartu}  
 \noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.
 
 \subsubsection{Povraćaj novca za otkazanu predstavu}
