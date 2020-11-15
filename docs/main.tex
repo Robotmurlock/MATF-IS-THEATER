@@ -768,11 +768,109 @@ gube se rezervacije i time se povećava broj slobodnih karata.
 da se vrati novac korisnicima koji su kupili kartu. Takođe je potrebno da se svim korisnicima koji
 su rezervisali kartu, pošalje mejl kao obaveštenje o otkazivanju predstave.
 
+% -------------------------------------------------------------------------------------------------------
+
 \subsection{Vođenje finansija}
-\begin{enumerate}
-  \item \textbf{Kratak opis:} Supervizor pozorišta može da vidi prilive i odlive za ceo sistem ili
+
+ \noindent\textbf{Kratak opis:} Supervizor pozorišta može da vidi prilive i odlive za ceo sistem ili
         neku konkretnu predstavu. 
-\end{enumerate}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_vodjenje_finansija.jpg}
+  \end{center}
+  \caption{Vodjenje finansija}
+  \label{usecase_vodjenje_finansija}
+\end{figure}
+
+\subsubsection{Pregled finansija u odredjenom vremenskom periodu}
+\noindent\textbf{Kratak opis:} Supervizor pozorišta može zatražiti pregled finansija
+u odredjenom vremenskom periodu. Nakon što dobije prikaz izveštaje ima opciju da izveštaj
+otštampa ili sačuva na sistemu.
+
+\noindent\textbf{Učesnici:} 
+\begin{itemize}
+  \item Supervizor pozorišta
+\end{itemize}
+
+\noindent\textbf{Preduslovi:} 
+\begin{itemize}
+  \item Supervizor pozorišta je prijavljen na sistem
+  \item Štampač za štampanje izveštaja
+\end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+\begin{itemize}
+  \item -
+\end{itemize}
+
+\noindent\textbf{Osnovni tok:} 
+\begin{legal}
+  \item Supervizor u sistemu otvara stranu za pregled finansija
+  \item Supervizor unosi vremenski period za koji zahteva pregled finansija
+  \item Sistem prikazuje podatke o finansijama za uneti period
+  \item Supervizor bira da li štampa izveštaj
+\end{legal}
+
+\noindent\textbf{Alternativni tokovi:}
+\begin{itemize}
+  \item \textbf{A1. Ne postoje podaci o traženom vremenskom periodu (korak 2)} 
+      \begin{legal}
+        \item Sistem obaveštava supervizora o problemu
+        \item Proces se nastavlja u \textbf{koraku 1}.
+      \end{legal}
+
+  \item \textbf{A2. Štampač nije dostupan (korak 4)} 
+    \begin{legal}
+      \item Sistem obaveštava supervizora o problemu
+      \item Proces se završava
+    \end{legal}
+\end{itemize}
+
+\subsubsection{Pregled finansija za konkretnu predstavu}
+\noindent\textbf{Kratak opis:} Supervizor pozorišta može zatražiti pregled finansija vezanih za održavanje konkretne predstave
+
+\noindent\textbf{Učesnici:} 
+\begin{itemize}
+  \item Supervizor pozorišta
+\end{itemize}
+
+\noindent\textbf{Preduslovi:} 
+\begin{itemize}
+  \item Supervizor pozorišta je prijavljen na sistem
+  \item Štampač za štampanje izveštaja
+  \item Predstava se nalazi u sistemu.
+\end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+\begin{itemize}
+  \item -
+\end{itemize}
+
+\noindent\textbf{Osnovni tok:} 
+\begin{legal}
+  \item Supervizor u sistemu otvara stranu za pregled finansija
+  \item Supervizor unosi ime predstave za koju želi da sazna pregled finansija
+  \item Sistem prikazuje podatke o finansijama za unetu predstavu
+  \item Supervizor bira da li štampa izveštaj
+\end{legal}
+
+\noindent\textbf{Alternativni tokovi:}
+\begin{itemize}
+  \item \textbf{A1. Uneta predstava ne postoji u sistemu (korak 2)} 
+      \begin{legal}
+        \item Sistem obaveštava supervizora o problemu
+        \item Proces se nastavlja u \textbf{koraku 1}.
+      \end{legal}
+
+  \item \textbf{A2. Štampač nije dostupan (korak 4)} 
+  \begin{legal}
+    \item Sistem obaveštava supervizora o problemu
+    \item Proces se završava
+  \end{legal}
+
+\end{itemize}
+
 
 \section{Druga sekcija.}
 Ovo je druga sekcija.
