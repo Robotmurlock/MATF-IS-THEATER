@@ -100,7 +100,7 @@ dela:\cite{hamilton_theatre_producing_the_drama}
 \section{Slučajevi upotrebe}
 
 \subsection{Organizacija predstave}
-Proces organizacije predstave počinje prijavom koju popunjava i podnosi organizator. Predstavu sa statusom "prijavljena" mora da odobri supervizor pozorišta. Kada se prijavljena predstava odobri, onda predstava prelazi u stanje "u pripremi". 
+Proces organizacije predstave počinje prijavom koju popunjava i podnosi organizator. Predstavu sa statusom ``prijavljena'' mora da odobri supervizor pozorišta. Kada se prijavljena predstava odobri, onda predstava prelazi u stanje ``u pripremi''. 
 
 Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije, dok supervizor izvršava administrativne zadatke vezane za pozorište. Neophodno je da organizator konstantno ima uvid u stanje svake predstave za koji je on zadužen. 
 
@@ -115,11 +115,12 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 \subsubsection{Kreiranje predstave} \label{Kreiranje predstave}
 \noindent\textbf{Kratak opis:} Da bi se predstava održala, organizator mora da je kreira u informacionom sistemu. 
 
-\noindent\textbf{Učesnici:} Zaposleni koji je organizator predstave
+\noindent\textbf{Učesnici:} Organizator predstave
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
     \item Postoji zaposleni koji je organizator predstave.
+    \item Organizator je prijavljen na sistem.
     \item Postoji scenario za predstavu.
     \item Organizator je ugovorio izvođenje predstave sa rediteljem.
     \item Reditelj je odredio glumce.
@@ -129,7 +130,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
-    \item Kreirana predstava je sačuvana u sistemu sa statusom "prijavljena".
+    \item Kreirana predstava je sačuvana u sistemu sa statusom ``prijavljena''.
     \item Organizator može da vidi prijavljenu predstavu kada je prijavljen na sistem.
   \end{itemize}
 
@@ -137,8 +138,8 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \begin{legal}
     \item Organizator u sistemu otvara stranu za kreiranje predstave.
     \item Organizator unosi u formu potrebne informacije, uključujući ime i opis predstave, reditelja, glumce i uloge. 
-    \item Organizator evidentira prijavu predstave u sistem klikom na "Pošalji prijavu". 
-    \item Supervizor se obaveštava mailom o prijavljenoj predstavi.
+    \item Organizator evidentira prijavu predstave u sistem klikom na ``Pošalji prijavu''. 
+    \item Sistem obaveštava supervizora emailom o prijavljenoj predstavi.
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -146,7 +147,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \item \textbf{A1. Informacije o prijavi su nepotpune} 
       \begin{legal}
         \item Organizator u koraku 2. ne unosi sve informacije, ili nije siguran da li su informacije finalne. 
-        \item Organizator čuva predstavu sa statusom "nedovršena" klikom na "Sačuvaj nedovršenu prijavu".
+        \item Organizator čuva predstavu sa statusom ``nedovršena'' klikom na ``Sačuvaj nedovršenu prijavu''.
       \end{legal}
   \item \textbf{A2. Neki od uključenih zaposlenih nije evidentiran u sistemu} 
       \begin{legal}
@@ -165,22 +166,23 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
-    \item Određena predstava je evidentirana u sistemu kao "prijavljena".
+    \item Supervizor je prijavljen na sistem.
+    \item Određena predstava je evidentirana u sistemu kao ``prijavljena''.
   \end{itemize}
 
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
-    \item Predstava koja je bila evidentirana kao "prijavljena" je evidentirana kao "u pripremi"
+    \item Predstava koja je bila evidentirana kao ``prijavljena'' je evidentirana kao ``u pripremi''
     \item Organizator može da vidi odgovarajući status predstave nakon prijave na sistem.
     \item Organizator može da rezerviše sale za probu i održavanje predstave. 
   \end{itemize}
 
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
-    \item Supervizor pretražuje predstave sa statusom "prijavljena".
+    \item Supervizor pretražuje predstave sa statusom ``prijavljena''.
     \item Supervizor otvara stranu za prikaz informacija o određenoj prijavljenoj predstavi. 
     \item Nakon analize informacija, supervizor odobrava predstavu. 
-    \item Organizator se obaveštava mailom o odobrenju. 
+    \item Sistem obaveštava organizatora emailom o odobrenju. 
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -188,7 +190,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \item \textbf{A1. Predstava je odbijena} 
       \begin{legal}
         \item Supervizor u 3. koraku odbija prijavu predstave uz obrazloženje.
-        \item Organizator se obaveštava mailom o odbijanju uz obrazloženje. 
+        \item Sistem obaveštava organizatora emailom o odbijanju uz obrazloženje. 
       \end{legal}
 \end{itemize}
 
@@ -200,6 +202,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
+    \item Organizator je prijavljen na sistem.
     \item Organizator je započeo prijavu predstave i sačuvao je kao nedovršenu.
     \item Organizator može da vidi nedovršenu predstavu nakon prijave na sistem.
     \item Svi preduslovi slučaja \ref{Kreiranje predstave}.
@@ -207,7 +210,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
-    \item Predstava koja je bila evidentirana kao "nedovršena" je sada evidentirana kao "prijavljena".
+    \item Predstava koja je bila evidentirana kao ``nedovršena'' je sada evidentirana kao ``prijavljena'' .
     \item Svi postuslovi slučaja \ref{Kreiranje predstave}.
   \end{itemize}
 
@@ -216,8 +219,8 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
     \item Organizator pretražuje nedovršene prijave.
     \item Organizator otvara određenu nedovšenu prijavu. 
     \item Organizator dopunjava, odnosno menja željene informacije.
-    \item Organizator evidentira prijavu predstave u sistem klikom na "Pošalji prijavu". 
-    \item Supervizor se obaveštava mailom o prijavljenoj predstavi.
+    \item Organizator evidentira prijavu predstave u sistem klikom na ``Pošalji prijavu''. 
+    \item Sistem obaveštava supervizora emailom o prijavljenoj predstavi.
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -225,7 +228,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \item \textbf{A1. Informacije o prijavi su nepotpune} 
       \begin{legal}
         \item Organizator u koraku 2. ne unosi sve informacije, ili nije siguran da li su informacije finalne. 
-        \item Organizator čuva predstavu sa statusom "nedovršena" klikom na "Sačuvaj nedovršenu prijavu".
+        \item Organizator čuva predstavu sa statusom ``nedovršena'' klikom na ``Sačuvaj nedovršenu prijavu''.
       \end{legal}
 \end{itemize}
 
@@ -233,10 +236,11 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 \subsubsection{Registrovanje zaposlenih} \label{Registrovanje zaposlenih}
 \noindent\textbf{Kratak opis:} Da bi zaposleni bili uključeni u predstavu, moraju biti registrovani u sistemu. Supervizor po sklapanju ugovora o radu sa zaposlenima unosi njihove informacije u sistem
 
-\noindent\textbf{Učesnici:} Supervizor
+\noindent\textbf{Učesnici:} Supervizor pozorišta
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
+    \item Supervizor je prijavljen na sistem.
     \item Pozorište je sklopilo ugovor o radu sa osobom A.
   \end{itemize}
 
@@ -250,7 +254,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \begin{legal}
     \item Supervizor otvara formu za evidentiranje zaposlenog.
     \item Supervizor popunjava formu, unoseći sve potrebne informacije uključujući Ime, Prezime, JMBG i email adresu. 
-    \item Zaposleni je obavešten o kreiranom profilu putem emaila. 
+    \item Sistem obaveštava zaposlenog o kreiranom profilu putem emaila. 
     \item Zaposleni klikom na link u emailu koji mu je stigao odlazi na stranicu gde kreira šifru za svoj nalog i potvrđuje registraciju.  
   \end{legal}
 
@@ -278,7 +282,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
-    \item Određena predstava je evidentirana u sistemu kao "odobrena".
+    \item Određena predstava je evidentirana u sistemu kao ``u pripremi''.
   \end{itemize}
 
 \noindent\textbf{Postuslovi:} 
@@ -291,14 +295,14 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
   \begin{legal}
   \item Organizator unosi podatke za prijavljivanje na sistem.
     \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
-    \item Organizator bira predstavu sa statusom "odobrena" kojoj želi da dodeli salu .
+    \item Organizator bira predstavu sa statusom ``u pripremi'' kojoj želi da dodeli salu .
     \item Sistem prikazuje informacije o predstavi.
     \item Organizator unosi datum i vreme održavanja predstave
     \item Organizator unosi dužinu trajanja predstave
     \item Sistem prikazuje slobodne sale za dati termin.
     \item Organizator dodeljuje slobodnu salu datoj predstavi za određeni termin.
     \item Sistem ažurira bazu podataka.
-    \item Glumci se obaveštavaju mailom o sali za održavanje predstave ili probe. 
+    \item Sistem obaveštava glumce emailom o sali za održavanje predstave ili probe. 
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -338,7 +342,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
     \item Sistem prikazuje informacije o predstavi.
     \item Organizator odjavljuje salu za dati termin
     \item Sistem ažurira bazu podataka.
-    \item Glumci se obaveštavaju mailom o oslobođenom terminu za datu salu
+    \item Sistem obaveštava glumce emailom o oslobođenom terminu za datu salu
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -377,7 +381,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
     \item Sistem prikazuje slobodne sale za dati termin.
     \item Organizator dodeljuje slobodnu salu datoj predstavi za određeni termin.
      \item Sistem ažurira bazu podataka.
-    \item Glumci se obaveštavaju mailom o promeni sale za održavanje predstave ili probe
+    \item Sistem obaveštava glumce emailom o promeni sale za održavanje predstave ili probe
   \end{legal}
 
 \noindent\textbf{Alternativni tokovi:} 
@@ -546,7 +550,7 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
     \item Rezervisana je određena sala za predstavu.
     \item Dodeljene su sve uloge (tehničke i umetničke) za realizaciju predstave .
     \item Određen je potreban budžet za realizaciju.
-    \item Organizator je zaduđen za barem jednu predstavu.
+    \item Organizator je zadužen za barem jednu predstavu.
   \end{itemize}
 
 \noindent\textbf{Postuslovi:} 
