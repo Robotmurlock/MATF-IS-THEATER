@@ -106,7 +106,7 @@ Organizator predstave je zadužen za ceo proces formiranja predstave od njene pr
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_organizacija_predstave.jpg}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_organizacija_predstave.jpg}
   \end{center}
   \caption{Organizacija predstave}
   \label{usecase_prodaja_karata}
@@ -276,7 +276,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_rezervacija_sale.png}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_rezervacija_sale.png}
   \end{center}
   \caption{Rezervacija sale}
   \label{usecase_rezervacija_sale}
@@ -345,7 +345,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
   \begin{legal}
   \item Organizator unosi podatke za prijavljivanje na sistem.
     \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
-    \item Organizator bira predstavu kojoj je dodeljena sala .
+    \item Organizator bira predstavu kojoj je dodeljena sala.
     \item Sistem prikazuje informacije o predstavi.
     \item Organizator odjavljuje salu za dati termin
     \item Sistem ažurira bazu podataka.
@@ -383,7 +383,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
   \begin{legal}
   \item Organizator unosi podatke za prijavljivanje na sistem.
     \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
-    \item Organizator bira predstavu kojoj je dodeljena sala .
+    \item Organizator bira predstavu kojoj je dodeljena sala.
     \item Sistem prikazuje informacije o predstavi.
     \item Sistem prikazuje slobodne sale za dati termin.
     \item Organizator dodeljuje slobodnu salu datoj predstavi za određeni termin.
@@ -410,7 +410,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
   
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_odrzavanje_predstave.jpg}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_odrzavanje_predstave.jpg}
   \end{center}
   \caption{Održavanje predstave}
   \label{usecase_prodaja_karata}
@@ -539,7 +539,7 @@ potrebno je, uz potvrdu organizatora, da se izvrši povraćaj novca svim klijent
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_prodaja_karata.jpg}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_prodaja_karata.jpg}
   \end{center}
   \caption{Prodaja karata}
   \label{usecase_prodaja_karata}
@@ -630,11 +630,20 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
     \item Baza je ažurirana tj. broj karata za predstavu je umanjen za broj kupljenih karata.
   \end{itemize}
 
+\newpage
+  \begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=80mm,height=140mm]{../images/activity_prodaja_karata.jpg}
+    \end{center}
+    \caption{Tok onlajn prodaje karata}
+    \label{activity_prodaja_karata}
+  \end{figure}
+
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
     \item Prijavljen korisnik pristupa stranici za kupovinu karata. 
     \item Sistem učitava podatke iz baze i prikazuje repertoar.
-    \item Korisnik klikom bira željenu predstavu.
+    \item Korisnik klikom bira željenu predstavu sa prikazanog repertoara.
     \item Sistem otvara korisniku formu za rezervaciju ili kupovinu karte.
     \item Korisnik kupuje ili rezerviše kartu.
     \item Sistem proverava formu i ažurira bazu podataka.
@@ -680,10 +689,10 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
           \item Sistem prikazuje korisniku stranicu, gde može da se izabere broj karata.
           \item Korisnik unosi željeni broj karata.
           \item Sistem izračunava cenu i prikazuje tu cenu korisniku.
-          \item Korisnik pretiska dugme za potvrdu.
+          \item Korisnik potvrđuje kupovinu karte tako što pretiska dugme.
           \item Sistem prikazuje korisniku opcije plaćanja.
           \item Korisnik bira željeni način plaćanja.
-          \item Sistem prikazuje korisniku formu za plaćanje.
+          \item Sistem prikazuje korisniku formu za plaćanje za izabran način plaćanja.
           \item Korisnik popunjava formu.
           \item Korisnik pretiska dugme za potvrdu.
           \item Sistem izvršava transakciju plaćanja sa odgovarajućim proveravama.
@@ -691,7 +700,7 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
     \item \textbf{5.2. Rezervacija karte}
         \begin{legal}
           \item Korisnik bira opciju za rezervaciju karte.
-          \item Korisnik pretiska dugme za potvrdu.
+          \item Korisnik potvrđuje rezervaciju karte tako što pretiska dugme.
         \end{legal}
   \end{itemize}
 
@@ -788,7 +797,7 @@ su rezervisali kartu, pošalje mejl kao obaveštenje o otkazivanju predstave.
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../diagrams/usecase_vodjenje_finansija.jpg}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_vodjenje_finansija.jpg}
   \end{center}
   \caption{Vođenje finansija}
   \label{usecase_vodjenje_finansija}
