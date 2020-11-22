@@ -1,4 +1,5 @@
 *.pdf
+!tasks/*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
