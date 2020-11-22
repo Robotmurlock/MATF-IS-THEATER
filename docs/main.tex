@@ -541,9 +541,25 @@ potrebno je, uz potvrdu organizatora, da se izvrši povraćaj novca svim klijent
   \begin{center}
       \includegraphics[width=100mm,height=60mm]{../images/usecase_prodaja_karata.jpg}
   \end{center}
-  \caption{Prodaja karata}
+  \caption{Prodaja karata: dijagram slučajeva upotrebe}
   \label{usecase_prodaja_karata}
 \end{figure}
+
+Ovaj proces ima, grubo rečeno, tri glavna stanja:
+\begin{itemize}
+  \item Predstava je u pripremi;
+  \item Kupovina i rezervacija karata;
+  \item Povraćaj novca (opcionalno i neželjno stanje).
+\end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=40mm]{../images/state_prodaja_karata.jpg}
+  \end{center}
+  \caption{Prodaja karata: dijagram stanja}
+  \label{state_prodaja_karata}
+\end{figure}
+
 
 \subsubsection{Definisanje broja karata za predstavu}
 \noindent\textbf{Kratak opis:} Organizator predstave može da definiše broj karata na osnovu rezervisane
@@ -718,11 +734,6 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
   \begin{itemize}
     \item Klijent koji želi da kupi ili rezerviše kartu.
     \item Blagajnik koji je zaposlen u pozorištu.
-  \end{itemize}
-
-  \noindent\textbf{Preduslovi:} 
-  \begin{itemize}
-    \item Klijent mora da ima rezervisanu kartu ili mora biti slobodan broj mesta za tu predstavu.
   \end{itemize}
 
   \noindent\textbf{Postuslovi:} 
