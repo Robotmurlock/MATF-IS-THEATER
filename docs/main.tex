@@ -646,15 +646,6 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
     \item Baza je ažurirana tj. broj karata za predstavu je umanjen za broj kupljenih karata.
   \end{itemize}
 
-\newpage
-  \begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=80mm,height=140mm]{../images/activity_prodaja_karata.jpg}
-    \end{center}
-    \caption{Tok onlajn prodaje karata}
-    \label{activity_prodaja_karata}
-  \end{figure}
-
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
     \item Prijavljen korisnik pristupa stranici za kupovinu karata. 
@@ -726,6 +717,15 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
 \noindent\textbf{Dodatne informacije:} Podaci koji su potrebni za prijavu su korisničko ime ili mejl, i 
         šifra naloga.
 
+        \newpage
+        \begin{figure}[H]
+          \begin{center}
+              \includegraphics[width=80mm,height=140mm]{../images/activity_prodaja_karata.jpg}
+          \end{center}
+          \caption{Tok onlajn prodaje karata}
+          \label{activity_prodaja_karata}
+        \end{figure}
+
 \subsubsection{Kupovina karata na blagajni}
 \noindent\textbf{Kratak opis:} Klijenti koji su rezervisali kartu mogu da kupe kartu u pozorištu.
 Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje postoji mesta.\\
@@ -748,9 +748,9 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
     \item Sistem prikazuje prodavcu račun za kupovinu.
     \item Blagajnik saopštava ukupnu cenu klijentu.
     \item Klijent izvršava plaćanje.
-    \item Blagajnik potvrđuje uplatu.
-    \item Sistem štampa odgovarajuće karte.
-    \item Blagajnik daje klijentu karte.
+    \item Blagajnik potvrđuje uplatu u sistemu.
+    \item Sistem prikazuje karte za štampanje.
+    \item Blagajnik štampa i daje klijentu karte.
   \end{legal}
 
   \noindent\textbf{Alternativni tokovi:} 
@@ -776,20 +776,29 @@ Klijenti koji nisu rezervisali kartu u pozorišu mogu da kupe kartu ako i dalje 
   \begin{itemize}
     \item \textbf{1.1. Klijent nema rezervisane karte}
         \begin{legal}
-          \item Blagajnik proverava da li ima slobodnih željenih karata tako što unosi upit preko odgovarajućeg interfejsa.
+          \item Blagajnik proverava da li ima slobodnih karata tako što unosi upit preko odgovarajućeg interfejsa.
           \item Sistem daje prodavcu informacije o broju slobodnih karata za dati upit.
         \end{legal}
     \item \textbf{1.2. Klijent ima rezervisane karte}
         \begin{legal}
-          \item Blagajnik zahteva odgovarajuće kodove za rezervisane karte.
-          \item Kupac daje prodavcu kodove za rezervisane karte.
-          \item Blagajnik provera da li su kodovi validni tako što ih unosi u sistem.
-          \item Sistem potvrđuje validnost kodova.
+          \item Blagajnik zahteva odgovarajući kod za rezervisane karte.
+          \item Kupac daje prodavcu kod za rezervisane karte.
+          \item Blagajnik provera da li je kod validan tako što ga unosi u sistem.
+          \item Sistem potvrđuje validnost koda.
         \end{legal}
   \end{itemize}
 
 \noindent\textbf{Dodatne informacije:} Ukoliko klijenti ne kupe rezervisane karte do nekog roka (pred početak predstave),
 gube se rezervacije i time se povećava broj slobodnih karata.
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=90mm,height=90mm]{../images/sequence_prodaja_karata.jpg}
+  \end{center}
+  \caption{Sekvenca prodaje karata na blagajni}
+  \label{sequence_prodaja_karata}
+\end{figure}
+
 
 \subsubsection{Zahtev za povraćaj novca za kupljenu kartu}  
 \noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.
