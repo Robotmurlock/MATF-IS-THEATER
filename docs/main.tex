@@ -114,7 +114,7 @@ Da bi klijenti i zaposleni koristili usluge sistema, potrebno je da budu prijavl
 \noindent\textbf{Kratak opis:} Klijenti i zaposleni mogu da se prijave na sistem koristeći odgovarajuće kredencijale.
 
 \subsection{Organizacija predstave}
-Proces organizacije predstave počinje prijavom koju popunjava i podnosi organizator. Predstavu sa statusom ,,prijavljena'' mora da odobri supervizor pozorišta. Kada se prijavljena predstava odobri, onda predstava prelazi u stanje ,,u pripremi``. 
+Proces organizacije predstave počinje prijavom koju popunjava i podnosi organizator. Predstavu sa statusom ,,prijavljena'' mora da odobri supervizor pozorišta. Kada se prijavljena predstava odobri, onda predstava prelazi u stanje ,,aktivna``. 
 
 Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije, dok supervizor izvršava administrativne zadatke vezane za pozorište. Neophodno je da organizator konstantno ima uvid u stanje svake predstave za koju je on zadužen. 
 
@@ -188,7 +188,7 @@ Proces organizacije predstave predstavljen je dijagramom na slici \ref{da_organi
 
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
-    \item Predstava koja je bila evidentirana kao ,,prijavljena'' je evidentirana kao ,,u pripremi``
+    \item Predstava koja je bila evidentirana kao ,,prijavljena'' je evidentirana kao ,,aktivna``
     \item Organizator može da vidi odgovarajući status predstave nakon prijave na sistem.
     \item Organizator može da rezerviše sale za probu i održavanje predstave. 
   \end{itemize}
@@ -295,7 +295,7 @@ Proces organizacije predstave predstavljen je dijagramom na slici \ref{da_organi
 % --------------------------------------------------------------------------------------------------
 
 \subsection{Rezervacija pozorišnih sala}
-Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu predstavu. Dakle, treba omogućiti uvid u slobodne sale, 
+Organizator aktivne predstave treba da rezerviše salu za probu ili konkretnu predstavu. Dakle, treba omogućiti uvid u slobodne sale, 
         kao i rezervacije unapred. Ukoliko dođe do promene termina predstave ili probe, potrebno je promeniti i termin za salu. Organizator ima mogućnost promene sale ukoliko je druga sala slobodna za dati termin. 
 
 \begin{figure}[H]
@@ -313,7 +313,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
-    \item Određena predstava je evidentirana u sistemu kao ,,u pripremi``.
+    \item Određena predstava je evidentirana u sistemu kao ,,aktivna``.
   \end{itemize}
 
 \noindent\textbf{Postuslovi:} 
@@ -326,7 +326,7 @@ Organizator predstave u pripremi treba da rezerviše salu za probu ili konkretnu
   \begin{legal}
   \item Organizator unosi podatke za prijavljivanje na sistem.
     \item Sistem vrši verifikaciju i prikazuje organizatoru listu predstava za koje je zadužen.
-    \item Organizator bira predstavu sa statusom ,,u pripremi`` kojoj želi da dodeli salu.
+    \item Organizator bira predstavu sa statusom ,,aktivna`` kojoj želi da dodeli salu.
     \item Sistem prikazuje informacije o predstavi.
     \item Organizator unosi datum i vreme održavanja predstave
     \item Organizator unosi dužinu trajanja predstave
@@ -571,7 +571,7 @@ potrebno je, uz potvrdu organizatora, da se izvrši povraćaj novca svim klijent
 
 Ovaj proces ima, grubo rečeno, tri glavna stanja:
 \begin{itemize}
-  \item Predstava je u pripremi;
+  \item Predstava je aktivna;
   \item Kupovina i rezervacija karata;
   \item Povraćaj novca (opcionalno i neželjno stanje).
 \end{itemize}
