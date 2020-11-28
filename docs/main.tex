@@ -802,11 +802,77 @@ gube se rezervacije i time se povećava broj slobodnih karata.
 
 \subsubsection{Zahtev za povraćaj novca za kupljenu kartu}  
 \noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.
+\noindent\textbf{Učesnici:} 
+  \begin{itemize}
+    \item Klijent koji zahteva povraćaj novca.
+    \item Blagajnik koji je zaposlen u pozorištu.
+  \end{itemize}
 
-\subsubsection{Povraćaj novca za otkazanu predstavu}
-\noindent\textbf{Kratak opis:} Ukoliko organizator ili supervizor otkažu predstavu, potrebno je
-da se vrati novac korisnicima koji su kupili kartu. Takođe je potrebno da se svim korisnicima koji
-su rezervisali kartu, pošalje mejl kao obaveštenje o otkazivanju predstave.
+  \noindent\textbf{Preduslovi:} 
+  \begin{itemize}
+    \item Korisnik je prethodno kupio kartu.
+    \item Predstava nije još održana.
+  \end{itemize}
+
+  \noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Ako je zahtev za povraćaj novca prihvaćen, onda je klijentu povraćen novac.
+  \end{itemize}
+
+  \noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Klijent saopštava blagajniku da želi povraćaj novca.
+    \item Blagajnik zahteva od sistema informacije o povraćaju novca za datu kartu.
+    \item Sistem prikazuje informacije.
+    \item Blagajnik odgovara na zahtev klijenta.
+  \end{legal}
+
+  \noindent\textbf{Podtokovi:}
+  \begin{itemize}
+    \item \textbf{4.1. Zahtev za povraćaj novca je moguć}
+        \begin{legal}
+          \item Blagajnik saopštava klijentu ponudu za povraćaj novca.
+          \item Klijent prihvata ponudu. 
+          \item Blagajnik šalje zahtev sistemu za povraćaj novca.
+          \item Sistem ažurira bazu podataka, gde je broj slobodnih karata povećava.
+          \item Sistem obaveštava blagajnika da je operacija uspešna.
+          \item Blagajnik isplaćuje klijentu novac.
+        \end{legal}
+    \item \textbf{4.2. Zahtev za povraćaj novca nije moguć}
+        \begin{legal}
+          \item Blagajnik saopštava klijentu da povraćaj novca nije moguć.
+        \end{legal}
+  \end{itemize}
+
+  \noindent\textbf{Alternativni tokovi:} 
+  \begin{itemize}
+    \item \textbf{A1. Klijentu ne odgovara ponuda za povraćaj novca (korak 4.1.2)} 
+        \begin{legal}
+          \item Klijent saopštava blagajniku da ne prihvata ponudu.
+          \item Proces se završava.
+        \end{legal}
+    \item \textbf{A2. Neuspeo povraćaj novca (korak 4.1.4)} 
+        \begin{legal}
+          \item Blagajnik saopštava klijenta da povraćaj novca trenutno nije moguć.
+          \item Proces se završava.
+        \end{legal}
+  \end{itemize}
+
+  \noindent\textbf{Dodatne informacije:} 
+  \begin{itemize}
+    \item Pri povraćaju novca za kartu, sistem prikazuje procenat novca
+  koji se vraća. Primer: Za kupljenu kartu se vraća 50\% od inicijalne cene. Procenat obračunava sistem
+  na osnovu prethodno definisanih pravila.
+    \item Ukoliko klijent zahteva novac za otkazanu predstavu, procenat novca koji se vraća je 100\%.
+  \end{itemize}
+
+  \begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=120mm,height=70mm]{../images/sequence_povracaj_novca.jpg}
+    \end{center}
+    \caption{Sekvenca povraćaja novca}
+    \label{sequence_povracaj novca}
+  \end{figure}
 
 % -------------------------------------------------------------------------------------------------------
 
