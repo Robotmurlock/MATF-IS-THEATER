@@ -287,4 +287,5 @@ TSWLatexianTemp*
 #*Notes.bib
 
 .DS_Store
-.bak*
+*.bak_*
+*.vpp.lck
