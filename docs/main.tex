@@ -98,7 +98,10 @@ dela\cite{hamilton_theatre_producing_the_drama}:
 \end{itemize}
 
 \section{Analiza sistema}
-Ovaj rad predstavlja informacioni sistem jednog pozorišta . Sistem je namenjen korisnicima koji su zaposleni u pozorištu i klijentima,tj. posetiocima pozorišta. Izraden je kao projekat u okviru predmeta "Informacioni sistemi" na master studijama Matematičkog fakulteta.Vođenje i organizacija rada pozorišta ukljucuje niz aktivnosti. U okviru ovog projekta urađene su sledeće funkcionalnosti:
+Informacioni sistem je namenjen korisnicima koji su zaposleni u pozorištu i klijentima, tj. posetiocima 
+pozorišta. Izrađen je kao projekat u okviru predmeta "Informacioni sistemi" na master studijama Matematičkog fakulteta. 
+Vođenje i organizacija rada pozorišta uključuje niz aktivnosti. U okviru ovog projekta urađene su 
+sledeće funkcionalnosti:
 
   \begin{itemize}
     \item Organizacija predstave
@@ -108,8 +111,8 @@ Ovaj rad predstavlja informacioni sistem jednog pozorišta . Sistem je namenjen 
     \item Vođenje finansija
   \end{itemize}
   
- Na narednoj slici nalazi se dijagram toka podataka koji grafički prikazuje
-osnovne aktere u sistemu i veze medju njima.
+Na narednoj slici nalazi se dijagram toka podataka koji grafički prikazuje
+osnovne aktere u sistemu i veze među njima.
 
 \begin{figure}[H]
   \begin{center}
@@ -118,6 +121,11 @@ osnovne aktere u sistemu i veze medju njima.
   \caption{Dijagram toka podataka nultog nivoa}
   \label{dfd0}
 \end{figure}
+
+Dijagram toka podataka prvog nivoa prikazuje detaljnije sistem. Iako su procesi "Registrovanje zaposlenih"
+i "Registracija" (odnosi se na registrovanje klijenata) podslučajevi upotrebe, izdvojene su na narednom dijagramu,
+jer se izdvajaju po interakciji između trećih lica i podataka od celovitog slučaja upotrebe. Za
+procese sa identifikatorom 1, 3, 4, 5, i 6 se može videti u nastavku dijagram podataka drugog nivoa.
 
 \begin{figure}[H]
   \begin{center}
@@ -505,7 +513,7 @@ Organizator ima uvid u predstave za koje je zadužen. Nakon organizovanja predst
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../images/dfd2_odrzavanje_repertoara.png}
+      \includegraphics[width=120mm,height=80mm]{../images/dfd2_odrzavanje_repertoara.png}
   \end{center}
   \caption{Održavanje repertoara: dijagram toka podataka drugog nivoa}
   \label{dfd2_odrzavanje_repertoara}
@@ -691,9 +699,14 @@ Ovaj proces ima, grubo rečeno, tri glavna stanja:
   \label{state_prodaja_karata}
 \end{figure}
 
+Celokupni proces se deli na dve celine: definisanje broja karata za predstavu (organizacija) i trgovina 
+kartama. To se i može primetiti na dijagramu toka podataka. Repertoar je neophodan kako zbog čitanja
+i ažuriranja broja slobodnih karata za neku konkretnu predstavu, a lista karata je neophodna za čuvanje
+kodova rezervisanih i kupljenih karata.  
+
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=90mm,height=60mm]{../images/dfd2_prodaja_karata.png}
+      \includegraphics[width=120mm,height=80mm]{../images/dfd2_prodaja_karata.png}
   \end{center}
   \caption{Prodaja karata: dijagram toka podataka drugog nivoa}
   \label{dfd2_prodaja_karata}
@@ -1026,7 +1039,7 @@ gube se rezervacije i time se povećava broj slobodnih karata.
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../images/activity_vodjenje_finansija.jpg}
+      \includegraphics[width=140mm,height=50mm]{../images/activity_vodjenje_finansija.jpg}
   \end{center}
   \caption{Vođenje finansija: objedinjeni dijagram aktivnosti}
   \label{activity?vodjenje?finansija}
@@ -1077,7 +1090,7 @@ odštampa ili sačuva na sistemu.
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=90mm,height=90mm]{../images/sequence_vodjenje_finansija_1.jpg}
+    \includegraphics[width=100mm,height=100mm]{../images/sequence_vodjenje_finansija_1.jpg}
   \end{center}
   \caption{Dijagram sekvenci - Pregled finansija u vremenskom periodu}
   \label{sekvence_vodjenje_finansija_vreme}
@@ -1128,7 +1141,7 @@ odštampa ili sačuva na sistemu.
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=90mm,height=90mm]{../images/sequence_vodjenje_finansija_2.jpg}
+    \includegraphics[width=100mm,height=100mm]{../images/sequence_vodjenje_finansija_2.jpg}
   \end{center}
   \caption{Dijagram sekvenci - Pregled finansija za konkretnu predstavu}
   \label{sekvence_vodjenje_finansija_predstava}
