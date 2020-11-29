@@ -456,80 +456,40 @@ Organizator aktivne predstave treba da rezerviše salu za predstavu. Dakle, treb
     \end{legal}
 \end{itemize}
 
-\subsection{Održavanje predstave}
-  Supervizor treba da napravi repertoar po kome se odrzavaju predstave, kao i da nedelju dana unapred proverava da li je došlo do promene (otkazivanja predstave), dok šef razvodnika treba da napravi raspored rada razvodnika u zavisnosti od repertoara. 
+% ----------------------------------------------------------------------------------------------------------
+
+\newpage
+\subsection{Održavanje repertoara}
+  Supervizor treba nedelju dana unapred da proverava da li je došlo do promene repertoara (otkazivanja predstave) i reguliše održavanje gostovanja (u smislu uklapanja u repertoar), dok šef razvodnika treba da napravi raspored rada razvodnika u zavisnosti od repertoara. 
+  
   
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=100mm,height=60mm]{../images/usecase_odrzavanje_predstave.jpg}
+      \includegraphics[width=100mm,height=60mm]{../images/usecase_odrzavanje_repertoara.png}
   \end{center}
-  \caption{Održavanje predstave}
-  \label{usecase_prodaja_karata}
+  \caption{Održavanje repertoara: dijagram slučajeva upotrebe}
+  \label{usecase_odrzavanje_repertoara}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../images/bpmn_odrzavanje_repertoara.png}
+  \end{center}
+  \caption{Održavanje repertoara: bpmn dijagram}
+  \label{bpmn_odrzavanje_repertoara}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../images/dfd2_odrzavanje_repertoara.png}
+  \end{center}
+  \caption{Održavanje repertoara: dijagram toka podataka}
+  \label{dfd2_odrzavanje_repertoara}
 \end{figure}
 
 
-\subsubsection{Pravljenje repertoara} 
-\noindent\textbf{Kratak opis:} Supervizor treba da napravi repertoar za narednih mesec dana, imajući u vidu sve predstave koje su spremne za izvođenje.
-
-\noindent\textbf{Učesnici:} Supervizor pozorišta.
-
-\noindent\textbf{Preduslovi:}
-  \begin{itemize}
-    \item Postoji zaposleni koji je zadužen za repertoar, i to je u ovom slučaju supervizor.
-    \item Postoji spisak svih predstava koje se izvode sledećeg meseca.
-    \item Supervizor ima pristup spisku predstava i poznato je trajanje i sala u kojoj se izvodi svaka predstava.
-  \end{itemize}
-
-\noindent\textbf{Postuslovi:} 
-  \begin{itemize}
-    \item Napravljen je repertoar.
-    \item Repertoar može da pogleda bilo koji korisnik sistema koji ima pristup internetu.
-  \end{itemize}
-
-\noindent\textbf{Osnovni tok:}
-  \begin{legal}
-    \item Supervizor otvara formu za evidentiranje zaposlenog.
-    \item Supervizor pristupa spisku predstava koje treba da se nađu na repertoaru.
-    \item Supervizor sastavlja repertoar, tako što za svaki dan bira koja će se predstava kad i gde održavati.  
-  \end{legal}
-
-\noindent\textbf{Alternativni tokovi:} 
-\begin{itemize}
-  \item \textbf{A1. Nije moguće održati predstavu zbog gostovanja} 
-      \begin{legal}
-        \item Za određeni dan nije moguće realizovati korak 2.
-        \item Umesto predstave tog dana, na repertoaru će se naći gostovanje.
-      \end{legal}
-\end{itemize}
-
-\subsubsection{Pravljenje rasporeda razvodnika} 
-\noindent\textbf{Kratak opis:} Šef razvodnika treba da napravi raspored rada razvodnika u zavisnosti od repertoara.
-
-\noindent\textbf{Učesnici:} Šef razvodnika.
-
-\noindent\textbf{Preduslovi:}
-  \begin{itemize}
-    \item Poznat je repertoar.
-    \item Poznato je koji razvodnici rade sledećeg meseca.
-    \item Šef razvodnika ima pristup sistemu.
-  \end{itemize}
-
-\noindent\textbf{Postuslovi:} 
-  \begin{itemize}
-    \item Poznat je raspored razvodnika za svaki dan repertoara.
-    \item Bilo koji razvodnik može da pogleda raspored rada razvodnika za tekući mesec.
-  \end{itemize}
-
-\noindent\textbf{Osnovni tok:}
-  \begin{legal}
-    \item Šef razvodnika pristupa sistemu.
-    \item Šef razvodnika pregleda repertoar za svaki dan posebno.
-    \item Šef razvodnika određuje koji će razvodnici biti u kojoj sali za svaki dan koji pregledaju.  
-  \end{legal}
-
-
-\subsubsection{Provera održavanja predstave} 
-\noindent\textbf{Kratak opis:} Supervizor svakog dana proverava predstave koje su na repertoaru nedelju istog dana sledeće nedelje, za slučaj da je neka otkazana.
+\subsubsection{Provera repertoara} 
+\noindent\textbf{Kratak opis:} Supervizor svakog dana proverava predstave koje su na repertoaru istog dana sledeće nedelje, za slučaj da je neka otkazana.
 
 \noindent\textbf{Učesnici:} Supervizor pozorišta.
 
@@ -546,36 +506,132 @@ Organizator aktivne predstave treba da rezerviše salu za predstavu. Dakle, treb
 
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
-    \item Supervizor pristupa sistemu.
-    \item Supervizor proverava da li postoji neki problem sa predstavama koje se održavaju nedelju dana od dana kada vrši proveru.
+    \item Supervizor otvara formu za evidentiranje zaposlenog.
+    \item Sistem vrši verifikaciju i prikazuje supervizoru listu datuma koji čine repertoar.
+    \item Supervizor bira datum iz te liste koji predstavlja isti dan sledeće nedelje.
+    \item Sistem prikazuje informacije za odabrani datum.
     \item Ukoliko postoji problem oko izvođenja predstave (predstava mora da bude otkazana), supervizor uklanja predstavu sa repertoara.
-    \item Supervizor obaveštava blagajnu da je predstava otkazana, kako bi rešili probleme sa kartama za otkazanu predstavu.
+    \item Sistem ažurira bazu podataka.
+    \item Supervizor želi da obavesti blagajnu da je predstava otkazana, kako bi rešili probleme sa kartama za otkazanu predstavu.
+    \item Sistem obaveštava blagajnu.
   \end{legal}
 
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../images/sequence_provera_repertoara.jpg}
+  \end{center}
+  \caption{Provera repertoara: dijagram sekvenci}
+  \label{sequence_provera_repertoara}
+\end{figure}
 
-\subsubsection{Pregled repertoara} 
-\noindent\textbf{Kratak opis:} Bilo koji korisnik ima pristup repertoaru.
+\subsubsection{Održavanje gostovanja} 
+\noindent\textbf{Kratak opis:} Supervizor treba da uklopi održavanje gostovanja u repertoar. Kada se održava gostovanje, tog dana ne sme da bude ništa na repertoaru.
 
-\noindent\textbf{Učesnici:} Korisnik servisa.
+\noindent\textbf{Učesnici:} Supervizor pozorišta.
 
 \noindent\textbf{Preduslovi:}
   \begin{itemize}
     \item Poznat je repertoar.
-    \item Korisnik ima pristup sistemu.
+    \item Supervizor ima pristup sistemu.
+    \item Supervizor je upoznat sa salom u kojoj treba da se održi gotovanje, datumima koji su u opticaju za održavanje i dužinom trajanja gostovanja.
   \end{itemize}
 
 \noindent\textbf{Postuslovi:} 
   \begin{itemize}
-    \item Korisnik je upoznat sa repertoarom.
+    \item Vidljive su izmene u repertoaru.
   \end{itemize}
 
 \noindent\textbf{Osnovni tok:}
   \begin{legal}
-    \item Korisnik pristupa sistemu.
-    \item Korisnik pregleda repertoar.
+    \item Supervizor otvara formu za evidentiranje zaposlenog.
+    \item Sistem vrši verifikaciju i prikazuje supervizoru listu datuma koji čine repertoar.
+    \item Supervizor bira datum koji odgovara željenom datumu održavanja gostovanja.
+    \item Sistem prikazuje repertoar za taj datum.
+    \item Supervizor proverava da li se nešto nalazi na repertoaru tog dana.
+    \item Ukoliko je odabrani dan slobodan, supervizor proverava da li je željena sala slobodna.
+    \item Ukoliko je sala slobodna, supervizor unosi gostovanje u repertoar.
+    \item Ažurirana je baza podataka.
   \end{legal}
 
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+ \item \textbf{A1. Odabrani datum nije slobodan} 
+      \begin{legal}
+        \item U koraku 5. za odabrani datum se već nalazi nešto na repertoaru.
+        \item Supervizor se vraća u korak 3. i bira neki drugi datum.
+      \end{legal}
+  \item \textbf{A2. Tražena sala nije slobodna} 
+      \begin{legal}
+        \item U koraku 6. za odabrani datum tražena sala nije slobodna
+        \item Supervizor se vraća u korak 3. i bira neki drugi datum.
+      \end{legal}
+  \item \textbf{A3. Nije moguće održati gostovanje} 
+      \begin{legal}
+        \item U koraku 3. nije preostao ni jedan datum koji je moguće odabrati za gostovanje.
+        \item Supervizor odlaže gostovanje do daljenjeg.
+      \end{legal}
+\end{itemize}
 
+
+\subsubsection{Pravljenje rasporeda razvodnika} 
+\noindent\textbf{Kratak opis:} Šef razvodnika treba da napravi raspored rada razvodnika u zavisnosti od repertoara.
+
+\noindent\textbf{Učesnici:} Šef razvodnika.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Poznat je repertoar.
+    \item Šef razvodnika ima pristup sistemu.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Napravljen je raspored rada razvodnika za svaki dan repertoara.
+    
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Šef razvodnika otvara formu za evidentiranje zaposlenog.
+    \item Sistem vrši verifikaciju i prikazuje šefu razvodnika repertoar i listu datuma za koje treba da sastavi raspored.
+    \item Šef razvodnika bira jedan datum iz liste datuma.
+    \item Sistem prikazuje postojeće informacije za odabrani datum.
+    \item Šef razvodnika za odabrani datum unosi imena razvodnika i salu u kojoj rade.
+    \item Sistem ažurira bazu podataka.
+  \end{legal}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=100mm,height=60mm]{../images/sequence_raspored_razvodnika.jpg}
+  \end{center}
+  \caption{Pravljenje rasporeda razvodnika: dijagram sekvenci}
+  \label{sequence_raspored_razvodnika}
+\end{figure}
+
+\subsubsection{Pregled repertoara} 
+\noindent\textbf{Kratak opis:} Klijent ima mogućnost da pregleda repertoar.
+
+\noindent\textbf{Učesnici:} Klijent
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Poznat je repertoar.
+    \item Klijent ima pristup sistemu.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Klijent je upoznat sa repertoarom.
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Klijent otvara formu za evidentiranje korisnika.
+    \item Sistem vrši verifikaciju i prikazuje klijentu listu datuma koji čine repertoar. 
+    \item Klijent bira datum za koji želi da pregleda repertoar.
+    \item Sistem prikazuje korisniku spisak predstava koje će se igrati tog dana, zajedno sa vremenom njihovog početka i salom u kojoj se igraju.
+  \end{legal}
+% ---------------------------------------------------------------------------
 
 \newpage
 \subsection{Prodaja karata}
