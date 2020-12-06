@@ -142,7 +142,7 @@ Proces organizacije predstave počinje prijavom koju popunjava i podnosi organiz
 
 Organizator predstave je zadužen za ceo proces formiranja predstave od njene prijave do realizacije, dok supervizor izvršava administrativne zadatke vezane za pozorište. Neophodno je da organizator konstantno ima uvid u stanje svake predstave za koju je on zadužen. 
 
-Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prikaz stanja predstave je predstavljen na slici \ref{state_predstava}. Tok podataka pri organizaciji je prikazan dijagramom na slici \ref{dfd2_organizacija_predstave}. Aktivnosti pri organizaciji predstave prikazane su na kraju poglavlja, dijagramom na slici \ref{da_organizacije_predstave}. 
+Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prikaz stanja predstave je predstavljen na slici \ref{state_predstava}. Tok podataka pri organizaciji je prikazan dijagramom na slici \ref{dfd2_organizacija_predstave}. 
 
 \begin{figure}[H]
   \begin{center}
@@ -169,7 +169,7 @@ Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prika
 \end{figure}
 
 \subsubsection{Kreiranje predstave} \label{Kreiranje predstave}
-\noindent\textbf{Kratak opis:} Da bi se predstava održala, organizator mora da je kreira u informacionom sistemu. 
+\noindent\textbf{Kratak opis:} Da bi se predstava održala, organizator mora da je kreira u informacionom sistemu. Aktivnosti pri kreiranju predstave prikazane su na dijagramu \ref{dijagram_aktivnosti_kreiranje_predstave}.
 
 \noindent\textbf{Učesnici:} Organizator predstave
 
@@ -215,44 +215,16 @@ Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prika
 
 \noindent\textbf{Dodatne informacije:} Podrazumeva se da je predstava ugovorena drugim putevima - nizom mejlova, telefonskih razgovora i sastanaka. Zbog komplikovane prirode međuljudskih veza u ovoj sferi, informacioni sistem se bavi isključivo ugovorenom predstavom. 
 
-\subsubsection{Odobravanje predstave}
-\noindent\textbf{Kratak opis:} Kada je predstava prijavljena, supervizor pregleda informacije, uzimajući u obzir aktuelni i budući repertoar i interesovanje publike za isti, kao i budžet pozorišta, i odobrava predstavu. 
-
-\noindent\textbf{Učesnici:} Supervizor pozorišta.
-
-\noindent\textbf{Preduslovi:}
-  \begin{itemize}
-    \item Supervizor je prijavljen na sistem.
-    \item Određena predstava je evidentirana u sistemu kao ,,prijavljena``.
-  \end{itemize}
-
-\noindent\textbf{Postuslovi:} 
-  \begin{itemize}
-    \item Predstava koja je bila evidentirana kao ,,prijavljena'' je evidentirana kao ,,aktivna``
-    \item Organizator može da vidi odgovarajući status predstave nakon prijave na sistem.
-    \item Organizator može da rezerviše sale za probu i održavanje predstave. 
-  \end{itemize}
-
-\noindent\textbf{Osnovni tok:}
-  \begin{legal}
-    \item Supervizor pretražuje predstave sa statusom ,,prijavljena``.
-    \item Supervizor otvara stranu za prikaz informacija o određenoj prijavljenoj predstavi. 
-    \item Nakon analize informacija, supervizor odobrava predstavu. 
-    \item Sistem obaveštava organizatora mejlom o odobrenju. 
-  \end{legal}
-
-\noindent\textbf{Alternativni tokovi:} 
-\begin{itemize}
-  \item \textbf{A1. Predstava je odbijena} 
-      \begin{legal}
-        \item Supervizor u 3. koraku odbija prijavu predstave uz obrazloženje.
-        \item Sistem obaveštava organizatora mejlom o odbijanju uz obrazloženje. 
-      \end{legal}
-\end{itemize}
-
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=160mm]{../images/dijagram_aktivnosti_kreiranje_predstave.png}
+  \end{center}
+  \caption{Kreiranje predstave: dijagram aktivnosti}
+  \label{dijagram_aktivnosti_kreiranje_predstave}
+\end{figure}
 
 \subsubsection{Dovršavanje prijave} \label{Dovršavanje prijave}
-\noindent\textbf{Kratak opis:} U slučaju da je organizator sačuvao prijavu kao nedovršenu, može da je izmeni ili dopuni, i konačno pošalje. 
+\noindent\textbf{Kratak opis:} U slučaju da je organizator sačuvao prijavu kao nedovršenu, može da je izmeni ili dopuni, i konačno pošalje. Aktivnosti pri kreiranju predstave prikazane su na dijagramu \ref{dijagram_aktivnosti_dovrsavanje_prijave}.
 
 \noindent\textbf{Učesnici:} Organizator predstave
 
@@ -288,9 +260,60 @@ Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prika
       \end{legal}
 \end{itemize}
 
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=160mm]{../images/dijagram_aktivnosti_dovrsavanje_prijave.png}
+  \end{center}
+  \caption{Dovršavanje prijave: dijagram aktivnosti}
+  \label{dijagram_aktivnosti_dovrsavanje_prijave}
+\end{figure}
+
+
+\subsubsection{Odobravanje predstave}
+\noindent\textbf{Kratak opis:} Kada je predstava prijavljena, supervizor pregleda informacije, uzimajući u obzir aktuelni i budući repertoar i interesovanje publike za isti, kao i budžet pozorišta, i odobrava predstavu. Aktivnosti pri odobravanju predstave prikazane su na dijagramu \ref{dijagram_aktivnosti_odobravanje_predstave}.
+
+\noindent\textbf{Učesnici:} Supervizor pozorišta.
+
+\noindent\textbf{Preduslovi:}
+  \begin{itemize}
+    \item Supervizor je prijavljen na sistem.
+    \item Određena predstava je evidentirana u sistemu kao ,,prijavljena``.
+  \end{itemize}
+
+\noindent\textbf{Postuslovi:} 
+  \begin{itemize}
+    \item Predstava koja je bila evidentirana kao ,,prijavljena'' je evidentirana kao ,,aktivna``
+    \item Organizator može da vidi odgovarajući status predstave nakon prijave na sistem.
+    \item Organizator može da rezerviše sale za probu i održavanje predstave. 
+  \end{itemize}
+
+\noindent\textbf{Osnovni tok:}
+  \begin{legal}
+    \item Supervizor pretražuje predstave sa statusom ,,prijavljena``.
+    \item Supervizor otvara stranu za prikaz informacija o određenoj prijavljenoj predstavi. 
+    \item Nakon analize informacija, supervizor odobrava predstavu. 
+    \item Sistem obaveštava organizatora mejlom o odobrenju. 
+  \end{legal}
+
+\noindent\textbf{Alternativni tokovi:} 
+\begin{itemize}
+  \item \textbf{A1. Predstava je odbijena} 
+      \begin{legal}
+        \item Supervizor u 3. koraku odbija prijavu predstave uz obrazloženje.
+        \item Sistem obaveštava organizatora mejlom o odbijanju uz obrazloženje. 
+      \end{legal}
+\end{itemize}
+
+\begin{figure}[H]
+  \begin{center}
+      \includegraphics[width=160mm]{../images/dijagram_aktivnosti_odobravanje_predstave.png}
+  \end{center}
+  \caption{Odobravanje predstave: dijagram aktivnosti}
+  \label{dijagram_aktivnosti_odobravanje_predstave}
+\end{figure}
 
 \subsubsection{Registrovanje zaposlenog} \label{Registrovanje zaposlenih}
-\noindent\textbf{Kratak opis:} Da bi zaposleni bio uključeni u predstavu, mora biti registrovan u sistemu. Supervizor po sklapanju ugovora o radu sa zaposlenim unosi njegove informacije u sistem
+\noindent\textbf{Kratak opis:} Da bi zaposleni bio uključeni u predstavu, mora biti registrovan u sistemu. Supervizor po sklapanju ugovora o radu sa zaposlenim unosi njegove informacije u sistem. Aktivnosti pri registrovanju zaposlenog prikazane su na dijagramu \ref{dijagram_aktivnosti_registrovanje_zaposlenog}.
 
 \noindent\textbf{Učesnici:} Supervizor pozorišta; zaposleni.
 
@@ -325,10 +348,10 @@ Pregled procesa je prikazan na slici \ref{usecase_organizacija_predstave}. Prika
 
 \begin{figure}[H]
   \begin{center}
-      \includegraphics[width=160mm]{../images/dijagram aktivnosti organizacija predstave vert.png}
+      \includegraphics[width=160mm]{../images/dijagram_aktivnosti_registrovanje_zaposlenog.png}
   \end{center}
-  \caption{Organizacija predstave: dijagram aktivnosti}
-  \label{da_organizacije_predstave}
+  \caption{Registrovanje zaposlenog: dijagram aktivnosti}
+  \label{dijagram_aktivnosti_registrovanje_zaposlenog}
 \end{figure}
 
 
