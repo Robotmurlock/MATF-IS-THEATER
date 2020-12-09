@@ -1224,8 +1224,13 @@ odštampa ili sačuva na sistemu.
 
 \subsection{Konceptualni nivo baze podataka}
 
-\#TODO: Promeniti "trajanje ugovora" u "datum isteka ugovora" za "zaposlen".\\
-\#TODO: Promeniti "sifra" u "enkriptovana sifra" i dodati "id" kao ključ.\\
+\noindent\#TODO: Promeniti ,,trajanje ugovora`` u ,,datum isteka ugovora`` za "zaposlen".\\
+\#TODO: Promeniti ,,sifra`` u ,,enkriptovana sifra`` i dodati ,,id`` kao ključ.\\
+\#TODO: Izbaciti ,,broj sale`` iz repertoara, jer je to strani ključ.\\
+\#TODO: Izbaciti ,,odgovara`` odnos, jer mozda ima vise smisla da je ternarni odnos umesto dva binarna.\\
+\#TODO: Pretvoriti ,,repertoar`` u entitet i dodati odnose sa ,,sala`` i ,,predstava``. Ne bi
+trebalo odnos da ima primarni ključ, a ima smisla da repertoar bude entitet isto koliko i odnos. Ovo
+je dilema ,,odnos ili entitet``.
 
 \begin{figure}[H]
   \begin{center}
@@ -1250,7 +1255,7 @@ opis odluka koje su preskočene na višem nivou. \\
 
 \noindent\textbf{Entiteni:}
 
-\textbf{raspored\_razvodnika}\{\underline{datum}, \underline{JMBG}, ime\_prezime, honorar\}\\
+\textbf{raspored\_razvodnika}\{\underline{datum}, \underline{JMBG}, ime\_prezime, honorar, \textit{broj\_sale}\}\\
 
 \textbf{sala}\{\underline{broj\_sale}, naziv, broj\_mesta\}\\
 
@@ -1264,7 +1269,20 @@ opis odluka koje su preskočene na višem nivou. \\
 
 \textbf{klijent}\{\underline{id}, ime\_prezime, mejl, enkriptovana\_sifra, datum\_registracija\}  
 
-\textbf{}
+\noindent\textbf{Odnosi:}
+
+\textbf{odnosi:} \textbf{raspored\_razvodnika}[broj\_sale] $\subseteq$ \textbf{sala}[broj\_sale]\\
+
+\textbf{postoji:} \textbf{zahtev\_za\_povraćaj\_novca}[kod] $\subseteq$ \textbf{karta}[kod]\\
+
+\textbf{repertoar}\{\underline{datum}, \underline{vreme}, indikator\_gostovanja, 
+  \textit{broj\_sale}, \textit{sifra\_predstave}\}
+
+\textbf{repertoar}[broj\_sale] $\subseteq$ \textbf{sala}[broj\_sale]
+
+\textbf{repertoar}[sifra\_predstave] $\subseteq$ \textbf{predstava}[sifra\_predstave]\\
+
+\textbf{karta}[]
 
 
 \section{Arhitektura sistema}
