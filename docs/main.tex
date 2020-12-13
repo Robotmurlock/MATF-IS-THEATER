@@ -1217,10 +1217,8 @@ odštampa ili sačuva na sistemu.
 
 \section{Baza podataka}
 
-\noindent\textbf{Rezime analize sistema:}
-\begin{itemize}
-  \item \dots
-\end{itemize}
+Na osnovu prethodno definisane analize sistema se konstruiše model podataka na konceptualnom nivou i 
+iz njega se izvodi logički model baze podataka. 
 
 \subsection{Konceptualni nivo baze podataka}
 
@@ -1234,15 +1232,25 @@ odštampa ili sačuva na sistemu.
 
 \noindent\textbf{Važne napomene i odluke u modelovanju:}
 \begin{itemize}
-  \item Način modelovanja rasporeda razvodnika ... Zašto razvodnik ne nasleđuje zaposlenog? Zašto 
-        je neophodno da datum bude ključ pored JMBG-a? ...
-  \item Izostavljeni atributi za salu ...
+  \item Razvodnik je odvojen od hijearhije zaposlenih, jer svi razvodnici po trenutnom
+        modelu rade honorarno po danu nezavisno od konkretne predstave.
+  \item Model podrazumeva najmanji skup atributa. Ovo se odnosi na neključne atribute. Atributi
+        koji dodatno opisuju objekat koji je određen ključem se uvek mogu naknadno dodati.
+  \item Konstrukcija jednog objekta repertoara podrazumeva da se odjednom spoje underline{vreme},
+        \underline{sala} i \underline{predstava} (agregacija). Međutim, ovo bi podrazumevalo
+        entitet koji predstavlja samo vreme (datum i vreme u danu), ali to se uklapa sa analizom
+        sistema (\textit{rezervacija pozorišnih sala}). Napravljen je kompromis gde se vreme
+        odnosi na rezervaciju sale (sala + vreme), a ovaj objekat u spoju sa predstavom 
+        čini objekat iz repertoara koji sadrži sve potrebne informacije. 
+  \item Entiteti u hijearhiji zaposlenog nemaju definisane dodatne atribute. Ovo može da bude grupisan
+        element koji se može detaljnije definisati na posebnom dijagramu za model podataka.
 \end{itemize}
 
 \subsection{Logički nivo baze podataka}
 
 Prevodimo ER dijagram koji je namenjen za konceptualan model baze podataka na relacioni model baze
-podataka na logičkom nivou. Cilj ovog dela zadatke je da se olakša kasniji razvoj prototipa i dodatan
+podataka na logičkom nivou. Cilj ovog dela zadatke je da se olakša kasniji razvoj prototipa, dodatno
+objasni arhitekturu sistema i da doprinese dodatan
 opis odluka koje su preskočene na višem nivou. \\
 
 \noindent\textbf{Entiteti:}
