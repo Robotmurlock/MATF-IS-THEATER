@@ -1265,7 +1265,7 @@ opis odluka koje su preskočene na višem nivou. \\
 
 \textbf{zahtev\_za\_povraćaj\_novca}\{\underline{datum}, razlog\}\\
 
-\textbf{karta}\{\underline{kod}, cena, tip\}\\
+\textbf{karta}\{\underline{kod}, cena, tip, \textit{sifra\_predstave}, \textit{broj\_sale}, \textit{datum}, \textit{vreme}, \textit{id\_klijenta}\}\\
 
 \textbf{klijent}\{\underline{id}, ime\_prezime, mejl, enkriptovana\_sifra, datum\_registracija\}  
 
@@ -1275,6 +1275,8 @@ opis odluka koje su preskočene na višem nivou. \\
 
 \textbf{postoji:} \textbf{zahtev\_za\_povraćaj\_novca}[kod] $\subseteq$ \textbf{karta}[kod]\\
 
+\textbf{\#TODO}
+
 \textbf{repertoar}\{\underline{datum}, \underline{vreme}, indikator\_gostovanja, 
   \textit{broj\_sale}, \textit{sifra\_predstave}\}
 
@@ -1282,8 +1284,14 @@ opis odluka koje su preskočene na višem nivou. \\
 
 \textbf{repertoar}[sifra\_predstave] $\subseteq$ \textbf{predstava}[sifra\_predstave]\\
 
-\textbf{karta}[]
+\textbf{poseduje:} 
+\begin{itemize}
+  \item \textbf{karta}[sifra\_predstave, broj\_sale, datum, vreme] 
+$\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_sale, datum, vreme]
+  \item \textbf{karta}[id\_klijenta] $\subseteq$ \textbf{klijent}[id\_klijenta]
+\end{itemize}
 
+\textbf{učestvuje}\{\underline{sifra\_predstave}, \underline{JMBG}, honorar, uloga\}
 
 \section{Arhitektura sistema}
 Ovo je treća sekcija.
