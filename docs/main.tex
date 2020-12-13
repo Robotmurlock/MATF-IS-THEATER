@@ -1224,14 +1224,6 @@ odštampa ili sačuva na sistemu.
 
 \subsection{Konceptualni nivo baze podataka}
 
-\noindent\#TODO: Promeniti ,,trajanje ugovora`` u ,,datum isteka ugovora`` za "zaposlen".\\
-\#TODO: Promeniti ,,sifra`` u ,,enkriptovana sifra`` i dodati ,,id`` kao ključ.\\
-\#TODO: Izbaciti ,,broj sale`` iz repertoara, jer je to strani ključ.\\
-\#TODO: Izbaciti ,,odgovara`` odnos, jer mozda ima vise smisla da je ternarni odnos umesto dva binarna.\\
-\#TODO: Pretvoriti ,,repertoar`` u entitet i dodati odnose sa ,,sala`` i ,,predstava``. Ne bi
-trebalo odnos da ima primarni ključ, a ima smisla da repertoar bude entitet isto koliko i odnos. Ovo
-je dilema ,,odnos ili entitet``.
-
 \begin{figure}[H]
   \begin{center}
     \includegraphics[width=140mm,height=80mm]{../database-model/model.png}
@@ -1253,45 +1245,49 @@ Prevodimo ER dijagram koji je namenjen za konceptualan model baze podataka na re
 podataka na logičkom nivou. Cilj ovog dela zadatke je da se olakša kasniji razvoj prototipa i dodatan
 opis odluka koje su preskočene na višem nivou. \\
 
-\noindent\textbf{Entiteni:}
+\noindent\textbf{Entiteti:}
 
-\textbf{raspored\_razvodnika}\{\underline{datum}, \underline{JMBG}, ime\_prezime, honorar, \textit{broj\_sale}\}\\
+\textbf{raspored\_razvodnika}\{\underline{JMBG}, \underline{datum}, ime\_prezime, honorar, \textit{broj\_sale}\}\\
 
 \textbf{sala}\{\underline{broj\_sale}, naziv, broj\_mesta\}\\
+
+\textbf{rezervacija}\{\underline{broj\_rezervacije}, datum, vreme, \textit{broj\_sale}\}\\
 
 \textbf{predstava}\{\underline{sifra\_predstave}, naziv\_predstave, opis, status, dužina\_trajanja\}\\
 
 \textbf{zaposlen}\{\underline{JMBG}, ime\_prezime, plata, datum\_zaposlenja, datum\_isteka\_ugovora\}\\
 
-\textbf{zahtev\_za\_povraćaj\_novca}\{\underline{datum}, razlog\}\\
+\textbf{zahtev\_za\_povraćaj\_novca}\{\underline{broj\_zahteva}, datum, razlog, \textit{kod}\}\\
 
-\textbf{karta}\{\underline{kod}, cena, tip, \textit{sifra\_predstave}, \textit{broj\_sale}, \textit{datum}, \textit{vreme}, \textit{id\_klijenta}\}\\
+\textbf{karta}\{\underline{kod}, cena, tip, \textit{sifra\_predstave}, \textit{broj\_rezervacije}, \textit{id\_klijenta}\}\\
 
-\textbf{klijent}\{\underline{id}, ime\_prezime, mejl, enkriptovana\_sifra, datum\_registracija\}  
+\textbf{klijent}\{\underline{ID}, ime\_prezime, mejl, enkriptovana\_sifra, datum\_registracije\}  
 
 \noindent\textbf{Odnosi:}
 
 \textbf{odnosi:} \textbf{raspored\_razvodnika}[broj\_sale] $\subseteq$ \textbf{sala}[broj\_sale]\\
 
+\textbf{rezervisana:} \textbf{rezervacija}[broj\_sale] $\subseteq$ \textbf{sala}[broj\_sale]\\
+
 \textbf{postoji:} \textbf{zahtev\_za\_povraćaj\_novca}[kod] $\subseteq$ \textbf{karta}[kod]\\
 
-\textbf{\#TODO}
+\textbf{repertoar}\{\underline{broj\_rezervacije}, \underline{sifra\_predstave}, indikator\_gostovanja\}
 
-\textbf{repertoar}\{\underline{datum}, \underline{vreme}, indikator\_gostovanja, 
-  \textit{broj\_sale}, \textit{sifra\_predstave}\}
-
-\textbf{repertoar}[broj\_sale] $\subseteq$ \textbf{sala}[broj\_sale]
+\textbf{repertoar}[broj\_rezervacije] $\subseteq$ \textbf{rezervacija}[broj\_rezervacije]
 
 \textbf{repertoar}[sifra\_predstave] $\subseteq$ \textbf{predstava}[sifra\_predstave]\\
 
-\textbf{poseduje:} 
-\begin{itemize}
-  \item \textbf{karta}[sifra\_predstave, broj\_sale, datum, vreme] 
-$\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_sale, datum, vreme]
-  \item \textbf{karta}[id\_klijenta] $\subseteq$ \textbf{klijent}[id\_klijenta]
-\end{itemize}
+\textbf{poseduje:} \textbf{karta}[sifra\_predstave, broj\_rezervacije] 
+$\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
 
-\textbf{učestvuje}\{\underline{sifra\_predstave}, \underline{JMBG}, honorar, uloga\}
+\textbf{poseduje:} \textbf{karta}[ID] $\subseteq$ \textbf{klijent}[ID]\\
+
+\textbf{učestvuje}\{\underline{sifra\_predstave}, \underline{JMBG}, honorar, uloga\}\\
+
+\textbf{rezervisana:} \textbf{karta}[sifra\_predstave, broj\_rezervacije]
+$\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
+
+\textbf{rezervisana:} \textbf{karta}[ID] $\subseteq$ \textbf{klijent}[ID]
 
 \section{Arhitektura sistema}
 Ovo je treća sekcija.
