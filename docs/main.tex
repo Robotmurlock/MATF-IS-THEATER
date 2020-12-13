@@ -1224,7 +1224,7 @@ iz njega se izvodi logički model baze podataka.
 
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=140mm,height=80mm]{../database-model/model.png}
+    \includegraphics[width=140mm,height=80mm]{../database-model/model_new.png}
   \end{center}
   \caption{ER dijagram - model podataka}
   \label{er_diagram_model}
@@ -1236,7 +1236,7 @@ iz njega se izvodi logički model baze podataka.
         modelu rade honorarno po danu nezavisno od konkretne predstave.
   \item Model podrazumeva najmanji skup atributa. Ovo se odnosi na neključne atribute. Atributi
         koji dodatno opisuju objekat koji je određen ključem se uvek mogu naknadno dodati.
-  \item Konstrukcija jednog objekta repertoara podrazumeva da se odjednom spoje underline{vreme},
+  \item Konstrukcija jednog objekta repertoara podrazumeva da se odjednom spoje \underline{vreme},
         \underline{sala} i \underline{predstava} (agregacija). Međutim, ovo bi podrazumevalo
         entitet koji predstavlja samo vreme (datum i vreme u danu), ali to se uklapa sa analizom
         sistema (\textit{rezervacija pozorišnih sala}). Napravljen je kompromis gde se vreme
@@ -1296,6 +1296,17 @@ $\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
 $\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
 
 \textbf{rezervisana:} \textbf{karta}[ID] $\subseteq$ \textbf{klijent}[ID]
+
+\subsection{Pogledi}
+
+Kako bi olakšali rukovanje bazom podataka uvodimo takodje sledeće poglede:
+\subsubsection{Finansije}
+\textbf{Atributi:}
+\begin{itemize}
+  \item datum 
+  \item svrha 
+  \item količina
+\end{itemize}
 
 \section{Arhitektura sistema}
 Informacioni sistem je napravljen kao veb aplikacija sa slojevitom arhitekturom. Korisnici informacionog sistema, zaposleni pozorišta, mogu da se autentifikuju na sistem i pristupe funkcijama sistema. Pored toga, posetioci pozorišta mogu da kupe karte za predstave kroz sistem. Aplikacija je izrađena u 3 sloja koji su objašnjeni u ostatku poglavnja. Arhitektura je predstavljena dijagramom na slici \ref{dijagram_arhitehture}.
