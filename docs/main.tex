@@ -1286,7 +1286,27 @@ opis odluka koje su preskočene na višem nivou. \\
 
 
 \section{Arhitektura sistema}
-Ovo je treća sekcija.
+Informacioni sistem je napravljen kao veb aplikacija sa slojevitom arhitekturom. Korisnici informacionog sistema, zaposleni pozorišta, mogu da se autentifikuju na sistem i pristupe funkcijama sistema. Pored toga, posetioci pozorišta mogu da kupe karte za predstave kroz sistem. Aplikacija je izrađena u 3 sloja koji su objašnjeni u ostatku poglavnja. Arhitektura je predstavljena dijagramom na slici \ref{dijagram_arhitehture}.
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=160mm]{../images/dijagram_arhitekture.png}
+  \end{center}
+  \caption{Dijagram arhitekture sistema}
+  \label{dijagram_arhitehture}
+\end{figure}
+
+\subsection{Sloj podataka}
+Baza podataka koja čuva sve podatke je u PostgreSQL sistemu. Definisanje modela, interakcija s njima, kao i samo kreiranje tabela, je urađeno kroz Sequelize biblioteku, koja služi kao ORM. Sequelize takođe automatski kreira i održava vezu s bazom. 
+
+\subsection{Logički sloj}
+Pre interakcije sa ostatkom sistema, svaki korisnički zahtev prolazi kroz sloj autentifikacije i autorizacije. Autentifikacija korisnika je urađena pomoću Passport.js biblioteke koja pojednostavljuje vođenje korisničke sesije. Autorizacija korisnika za određene funkcionalosti se dešava na nivou kontrolera. 
+Kontroleri su spona između korisnika i modela. Služe da odgovore na korisnički zahtev obrađenim podacima. Oslanjaju se na servise za obradu podataka i interakciju s modelima. 
+Servisi služe da apstrakuju interakciju s određenim tipom podataka. Najčešće, jedan servis odgovara jednom modelu. 
+
+\subsection{Prezentacioni sloj}
+Prezentacioni sloj je kreiran kroz React veb aplikaciju. Ona se opet može prikazati kroz slojeve. Postoji podsloj podataka, realizovan kroz React Redux, zadužen za čuvanje i povezivanje podataka sa komponentama. Postoji logički međusloj koji se sastoji od funkcija, tzv. akcija, kojima komponente komuniciraju sa serverskim delom aplikacije i ažiuriraju podatke u Redux skladištu. Na kraju, postoje React komponente -  prezentacioni sloj klijentske aplikacije. Komponente čine sve što korisnik vidi i sa čime interaguje kroz svoj veb pregledač.
+
 
 \section{Korisnički interfejs}
 Ovo je zaključak.
