@@ -1290,7 +1290,11 @@ $\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
 
 \textbf{poseduje:} \textbf{karta}[ID] $\subseteq$ \textbf{klijent}[ID]\\
 
-\textbf{učestvuje}\{\underline{sifra\_predstave}, \underline{JMBG}, honorar, uloga\}\\
+\textbf{učestvuje}\{\underline{sifra\_predstave}, \underline{JMBG}, honorar, uloga\}
+
+\textbf{učestvuje}[sifra\_predstave] $\subseteq$ \textbf{predstava}[sifra\_predstave]
+
+\textbf{učestvuje}[JMBG] $\subseteq$ \textbf{zaposlen}[JMBG]
 
 \textbf{rezervisana:} \textbf{karta}[sifra\_predstave, broj\_rezervacije]
 $\subseteq$ \textbf{repertoar}[sifra\_predstave, broj\_rezervacije]
