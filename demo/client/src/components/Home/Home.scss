@@ -1,0 +1,44 @@
+.home-wrapper {
+  .predstava {
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    position: relative;
+    h3 {
+      margin: 0 0 10px;
+    }
+    h4 {
+      font-weight: normal;
+      margin: 10px 0 0;
+    }
+    .status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    &.prijavljena, &.skica {
+      background-color: rgba(white, .8);
+      .status {
+        color: #8d6500;
+      }
+    }
+    &.odbijena {
+      .status {
+        color: #8d0a0a;
+      }
+    }
+  }
+  .kreiraj {
+    display: inline-block;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    color: black;
+    background-color: #5FE349;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+}

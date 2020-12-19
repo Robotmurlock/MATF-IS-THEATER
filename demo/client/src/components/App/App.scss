@@ -1,0 +1,37 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url('./joah-legg-9HDeGTY2dFk-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+}
+
+.header-wrapper {
+  background-color: #D44424;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  padding: 10px;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  max-width: 800px;
+  margin: 10px auto;
+  .nav {
+    flex: 0 0 100px;
+  }
+  .content-inner-wrapper {
+    flex: 1 0 auto;
+    padding-left: 50px;
+  }
+}
