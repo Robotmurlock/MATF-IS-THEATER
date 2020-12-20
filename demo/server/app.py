@@ -7,11 +7,8 @@ cors = CORS(app)
 
 DATA_FILE = './data.json'
 
-ps = {}
 with open(DATA_FILE, 'r') as data:
-    ps_s = json.loads(data.read())
-    for k, v in ps_s.items():
-        ps[int(k)] = v
+    ps = {int(k): v for k, v in json.loads(data.read()).items()}
 
 next_id = 1 + max(ps.keys())
 
