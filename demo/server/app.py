@@ -5,46 +5,9 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-ps = {
-        1: {
-          'id': 1,
-          'organizator': 'Ognjen Milinković',
-          'naziv': 'Antigona',
-          'opis': '...',
-          'glumci': ['Ime Prezime', 'Ime Prezime'],
-          'reditelj': 'Jagoš Marković',
-          'status': 'prijavljena',
-        },
-        2: {
-          'id': 2,
-          'organizator': 'Katarina Savičić',
-          'naziv': 'Katarinina Antigona',
-          'opis': '...',
-          'glumci': ['Dragana Milić', 'Nikola Vuković'],
-          'reditelj': 'Jagoš Marković',
-          'status': 'prijavljena',
-        },
-        3: {
-          'id': 3,
-          'organizator': 'Nikola Vuković',
-          'naziv': 'Bela kafa',
-          'opis': '...',
-          'glumci': ['Ime Prezime', 'Ime Prezime'],
-          'reditelj': 'Aleksandar Popović',
-          'status': 'u pripremi',
-        },
-        4: {
-          'id': 4,
-          'organizator': 'Ognjen Milinković',
-          'naziv': 'Sumnjivo lice',
-          'opis': '...',
-          'glumci': ['Ime Prezime', 'Ime Prezime'],
-          'reditelj': 'Jagoš Marković',
-          'status': 'skica',
-        },
-}
+from data import ps
 
-next_id = 5
+next_id = 1 + max(ps.keys())
 
 @app.route('/predstave', methods=['GET'])
 def predstave():
