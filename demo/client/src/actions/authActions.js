@@ -1,23 +1,23 @@
 export const login = (username, password) => (dispatch) => new Promise((res, rej) => {
     if (!username || !password) res();
     const accounts = {
-      supervizor: {
+      'supervizor@pozoriste.com': {
         account: 'Momir Adžemović',
         accountType: 'supervizor'
       },
-      dragana: {
+      'dragana@pozoriste.com': {
         account: 'Dragana Milić',
         accountType: 'zaposleni'
       },
-      katarina: {
+      'katarina@pozoriste.com': {
         account: 'Katarina Savičić',
         accountType: 'zaposleni'
       },
-      ognjen: {
+      'ognjen@pozoriste.com': {
         account: 'Ognjen Milinković',
         accountType: 'zaposleni'
       },
-      nikola: {
+      'nikola@pozoriste.com': {
         account: 'Nikola Vuković',
         accountType: 'zaposleni'
       },
