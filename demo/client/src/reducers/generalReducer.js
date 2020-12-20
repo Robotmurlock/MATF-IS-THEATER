@@ -1,8 +1,8 @@
 const initialState = {
-  // account: null,
-  // accountType: null,
-  account: 'Ognjen Milinković',
-  accountType: 'zaposleni',
+  account: null,
+  accountType: null,
+  // account: 'Ognjen Milinković',
+  // accountType: 'zaposleni',
 }
 
 const generalReducer = (state = initialState, action) => {

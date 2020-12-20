@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import Nav from "../Nav/Nav";
 import Home from "../Home/Home";
 import Create from "../Create/Create";
+import Predstava from "../Predstava/Predstava";
 
 class App extends Component {
   render() {
@@ -25,8 +26,9 @@ class App extends Component {
                 <div className="content-inner-wrapper">
                   <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/create" component={Create} />
-                    <Route path="/edit/:id" component={Create} />
+                    <Route path="/kreiraj" component={Create} />
+                    <Route path="/izmeni/:id" component={Create} />
+                    <Route path="/predstava/:id" component={Predstava} />
                   </Switch>
                 </div>
               </>

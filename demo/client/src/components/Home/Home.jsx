@@ -25,7 +25,9 @@ class Home extends Component {
         {
           predstave.map((predstava) => (
             <div className={`predstava ${predstava.status}`} key={predstava.ime}>
-              <h3>{predstava.naziv}</h3>
+              <h3>
+                <Link to={`/predstava/${predstava.id}`}>{predstava.naziv}</Link>
+              </h3>
               <h4>Organizator: {predstava.organizator}</h4>
               <h4>Reditelj: {predstava.reditelj}</h4>
               <h4>Glumci: {predstava.glumci?.join(', ')}</h4>
@@ -33,12 +35,12 @@ class Home extends Component {
               {
                 predstava.organizator === account &&
                 predstava.status === 'skica' &&
-                <Link to={`/edit/${predstava.id}`}>Izmeni prijavu</Link>
+                <Link to={`/izmeni/${predstava.id}`}>Izmeni prijavu</Link>
               }
             </div>
           ))
         }
-        <Link to="/create" className="kreiraj">Kreiraj predstavu</Link>
+        <Link to="/kreiraj" className="kreiraj">Kreiraj predstavu</Link>
       </div>
     );
   }

@@ -1,0 +1,32 @@
+.predstava-wrapper {
+  background-color: white;
+  padding: 20px;
+  h3 {
+    margin: 0 0 10px;
+  }
+  h4 {
+    font-weight: normal;
+    margin: 10px 0 0;
+  }
+  .buttons-wrapper {
+    margin-top: 20px;
+    button {
+      display: inline-block;
+      padding: 10px;
+      color: black;
+      background-color: #5FE349;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      border: 0;
+      font-size: 18px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-right: 20px;
+      cursor: pointer;
+      &.odobri {}
+      &.odbij {
+        background-color: #F22E21;
+      }
+    }
+  }
+}
