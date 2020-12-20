@@ -53,7 +53,7 @@ class Predstava extends Component {
           <h4>Opis: {predstava.opis}</h4>
           <h4>Organizator: {predstava.organizator}</h4>
           <h4>Reditelj: {predstava.reditelj}</h4>
-          <h4>Glumci: {predstava.glumci?.join(', ')}</h4>
+          <h4>Glumci: {predstava.glumci?.map(ug => ug.join(' - ')).join(', ')}</h4>
           <h4>Status: {predstava.status}</h4>
           {
             account === predstava.organizator &&
