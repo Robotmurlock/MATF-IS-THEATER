@@ -22,7 +22,10 @@ class Predstava extends Component {
     if (!predstava.razlog) return;
     predstava.status = 'odbijena';
     this.props.sacuvajPredstavu(predstava)
-      .then(() => this.props.history.push('/'))
+      .then(() => {
+        alert('Predstava je uspešno odobrena')
+        this.props.history.push('/');
+      })
       .catch((err) => alert(err.message));
   }
 
@@ -63,8 +66,8 @@ class Predstava extends Component {
           accountType === 'supervizor' &&
           predstava.status === 'prijavljena' && (
             <div className="buttons-wrapper">
-              <button className="odbij" onClick={this.odbij}>Odbij</button>
-              <button className="odobri" onClick={this.odobri}>Odobri</button>
+              <button className="button odbij" onClick={this.odbij}>Odbij</button>
+              <button className="button odobri" onClick={this.odobri}>Odobri</button>
             </div>
           )
         }

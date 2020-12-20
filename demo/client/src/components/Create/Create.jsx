@@ -41,7 +41,10 @@ class Create extends Component {
     data.status = skica ? 'skica' : 'prijavljena';
     console.log(data);
     this.props.sacuvajPredstavu(data)
-      .then(() => this.props.history.push('/'))
+      .then(() => {
+        alert('Prijava uspešno sačuvana');
+        this.props.history.push('/');
+      })
       .catch((err) => alert(err.message));
   }
 

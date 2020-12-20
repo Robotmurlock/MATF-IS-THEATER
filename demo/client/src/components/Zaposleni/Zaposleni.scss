@@ -1,0 +1,26 @@
+.zaposleni-wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 2fr 2fr;
+  .zaposleni {
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+
+    h3 {
+      margin: 0;
+    }
+    h4 {
+      font-style: italic;
+      margin: 0;
+    }
+  }
+  .kreiraj {
+    display: inline-block;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #5FE349;
+  }
+}

@@ -7,6 +7,8 @@ import Nav from "../Nav/Nav";
 import Home from "../Home/Home";
 import Create from "../Create/Create";
 import Predstava from "../Predstava/Predstava";
+import Zaposleni from "../Zaposleni/Zaposleni";
+import RegistrujZaposlenog from "../RegistrujZaposlenog/RegistrujZaposlenog";
 
 class App extends Component {
   render() {
@@ -29,6 +31,8 @@ class App extends Component {
                     <Route path="/kreiraj" component={Create} />
                     <Route path="/izmeni/:id" component={Create} />
                     <Route path="/predstava/:id" component={Predstava} />
+                    <Route path="/zaposleni" component={Zaposleni} />
+                    <Route path="/kreiraj-nalog" component={RegistrujZaposlenog} />
                   </Switch>
                 </div>
               </>

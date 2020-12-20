@@ -24,7 +24,7 @@ class Home extends Component {
       <div className="home-wrapper">
         {
           predstave.map((predstava) => (
-            <div className={`predstava ${predstava.status}`} key={predstava.ime}>
+            <div className={`predstava ${predstava.status}`} key={predstava.id}>
               <h3>
                 <Link to={`/predstava/${predstava.id}`}>{predstava.naziv}</Link>
               </h3>
@@ -40,7 +40,7 @@ class Home extends Component {
             </div>
           ))
         }
-        <Link to="/kreiraj" className="kreiraj">Kreiraj predstavu</Link>
+        <Link to="/kreiraj" className="button kreiraj">Kreiraj predstavu</Link>
       </div>
     );
   }
