@@ -32,7 +32,7 @@ class Create extends Component {
       glumci: [],
     }
     this.state.glumci.forEach((_, i) => {
-      data.glumci.push(document.getElementById(`glumac_${i}_ime`).value + ' ' + document.getElementById(`glumac_${i}_prezime`).value)
+      data.glumci.push([document.getElementById(`glumac_${i}_uloga`).value, document.getElementById(`glumac_${i}_ime`).value])
     })
     if (this.props.match.params.id) {
       data.id = parseInt(this.props.match.params.id);
@@ -58,8 +58,8 @@ class Create extends Component {
       const glumci = [];
       predstava.glumci.forEach(g => {
         glumci.push({
-          ime: g.substr(0, g.indexOf(' ')),
-          prezime: g.substr(g.indexOf(' ') + 1),
+          uloga: g[0],
+          ime: g[1],
         })
       });
       this.setState({ glumci });
@@ -92,8 +92,8 @@ class Create extends Component {
               <div className="flex" key={glumac}>
                 <div></div>
                 <div className="inner-flex">
+                  <input type="text" name={`glumac_${i}_uloga`} id={`glumac_${i}_uloga`} placeholder="Uloga" defaultValue={this.state.glumci[i].uloga}/>
                   <input type="text" name={`glumac_${i}_ime`} id={`glumac_${i}_ime`} placeholder="Ime" defaultValue={this.state.glumci[i].ime}/>
-                  <input type="text" name={`glumac_${i}_prezime`} id={`glumac_${i}_prezime`} placeholder="Prezime" defaultValue={this.state.glumci[i].prezime}/>
                 </div>
               </div>
             ))

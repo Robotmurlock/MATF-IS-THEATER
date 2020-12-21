@@ -28,9 +28,8 @@ class Login extends Component {
     return (
       <div className="login-wrapper">
         <form onSubmit={this.login}>
-          <h2>Prijava na sistem</h2>
           <div className="flex">
-            <label htmlFor="username">Korisničko ime:</label>
+            <label htmlFor="username">Email:</label>
             <input type="text" id="username" name="username"/>
           </div>
           <div className="flex">
@@ -39,7 +38,7 @@ class Login extends Component {
           </div>
           <div className="flex">
             <div/>
-            <button type="submit" disabled={loading}>Prijava</button>
+            <button type="submit" disabled={loading}>Prijavi se</button>
           </div>
           {
             error && (<div className="error">{error.toString()}</div>)

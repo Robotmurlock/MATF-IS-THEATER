@@ -30,7 +30,7 @@ class Home extends Component {
               </h3>
               <h4>Organizator: {predstava.organizator}</h4>
               <h4>Reditelj: {predstava.reditelj}</h4>
-              <h4>Glumci: {predstava.glumci?.join(', ')}</h4>
+              <h4>Glumci: {predstava.glumci?.map(ug => ug.join(' - ')).join(', ')}</h4>
               <div className="status">{predstava.status}</div>
               {
                 predstava.organizator === account &&

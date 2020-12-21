@@ -5,7 +5,10 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-from data import ps
+DATA_FILE = './data.json'
+
+with open(DATA_FILE, 'r') as data:
+    ps = {int(k): v for k, v in json.loads(data.read()).items()}
 
 next_id = 1 + max(ps.keys())
 
