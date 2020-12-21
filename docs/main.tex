@@ -107,7 +107,7 @@ dela\cite{hamilton_theatre_producing_the_drama}:
   \item tehnički deo
 \end{itemize}
 
-\section{Pojmovi i definicije}
+\subsection{Pojmovi i definicije}
 
 Da bi čitalac mogao da isprati dalji tekst, potrebno je da bude upoznat sa osnovnim pojmovima
 vezanih za pozorište što uključuje i poslove koje obavljaju zaposleni jednog pozorišta. Neki zaposleni
@@ -138,55 +138,55 @@ u ovom radi stavili akcenat.
 
 Pojmovi koji slede su uglavnom svima poznati, ali smatramo da je potrebno definisati ih ovde da 
 ne bi dolazilo do zabune, jer se iste reči koriste za više značenje u različitim delovima (ovo se
-pretežno odnosi na predstavu).
+pretežno odnosi na predstavu). Ovi pojmovi dobijaju svoje precizno značenje pri modeliranju baze
+podataka, pa su i na osnovu tog modela definisani.
 
 \begin{table}[H]
   \centering
   \begin{tabular}{c|p{0.6\linewidth}}
     \textbf{Pojmovi} & \textbf{Značenje} \\
     \hline
-    \textbf{Predstava} & ... \\
+    \textbf{Predstava} & Definisana naslovom i opisom skripta.  \\
     \hline
-    \textbf{Repertoar} & ... \\
+    \textbf{Održavanje predstave} & Realizacija predstave u konkretnoj salu u konkretnom trenutku.  \\
+    \hline
+    \textbf{Repertoar} & Niz održavanje koji je sortiran hronološki po vremenu održavanja. \\
   \end{tabular}
-  \caption{Pojmovi i}
+  \caption{Pojmovi i značenja}
 \end{table}
 
 \section{Analiza sistema}
 Informacioni sistem je namenjen korisnicima koji su zaposleni u pozorištu i klijentima, tj. posetiocima 
-pozorišta. Izrađen je kao projekat u okviru predmeta "Informacioni sistemi" na master studijama Matematičkog fakulteta. 
-Vođenje i organizacija rada pozorišta uključuje niz aktivnosti. U okviru ovog projekta urađene su 
-sledeće funkcionalnosti:
-
-  \begin{itemize}
-    \item Organizacija predstave
-    \item Rezervacija sala
-    \item Održavanje repertoara
-    \item Prodaja karata
-    \item Vođenje finansija
-  \end{itemize}
+pozorišta. Sistem nije namenjen za neku konkretno pozorište, već više predstavlja neko opšte rešenje koje
+se može dodatno modifikovati po potrebama klijenta koji zahteva informacioni sistem. Ipak, ideja 
+sistema je da bude što bliži postojećem informacionom sistemu Narodnog pozorišta u Beogradu. Nažalost,
+zbog situacije sa pandemijom, nije bilo mnogo mogućnosti sa direktnom komunikacijom sa zaposlenima
+Narodnog pozorišta.
   
-Na narednoj slici nalazi se dijagram konteksta koji grafički prikazuje
+Na narednoj slici nalazi se dijagram nultog nivoa koji grafički prikazuje
 osnovne aktere u sistemu i veze među njima.
 
 \begin{figure}[H]
   \begin{center}
       \includegraphics[width=80mm]{../images/dfd0.png}
   \end{center}
-  \caption{Dijagram konteksta}
+  \caption{Dijagram nultog nivoa}
   \label{dfd0}
 \end{figure}
 
-Dijagram toka podataka nultog nivoa prikazuje detaljnije sistem. Iako su procesi "Registrovanje zaposlenih"
-i "Registracija" (odnosi se na registrovanje klijenata) podslučajevi upotrebe, izdvojene su na narednom dijagramu,
+Dijagram toka podataka prvog nivoa prikazuje detaljnije sistem. Iako su procesi ,,Registrovanje zaposlenih``
+i ,,Registracija`` (odnosi se na registrovanje klijenata) podslučajevi upotrebe, izdvojene su na narednom dijagramu,
 jer se izdvajaju po interakciji između trećih lica i podataka od celovitog slučaja upotrebe. Za
 procese sa identifikatorom 1, 3, 4, 5, i 6 se može videti u nastavku dijagram toka podataka prvog nivoa.
+
+Sistem se sastoji samo od jedne baze podataka. Zbog jednostavnosti, svi elementi skladišta na narednoj 
+slici predstavljaju jednu tabelu. 
 
 \begin{figure}[H]
   \begin{center}
       \includegraphics[width=140mm]{../images/dfd1.png}
   \end{center}
-  \caption{Dijagram toka podataka nultog nivoa}
+  \caption{Dijagram toka podataka prvog nivoa}
   \label{dfd1}
 \end{figure}
 
