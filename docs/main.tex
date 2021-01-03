@@ -84,11 +84,11 @@ Cilj ovog seminarskog rada je demonstracija znanja stečenog na kursu ,,Informac
 studijama na Matematičkom fakultetu. Mentori su profesor \textbf{Saša Malkov} i asistent \textbf{Anja Bukurov}.
 Prezentovano je jedno rešenje za informacioni sistema pozorišta sa
 akcentom na organizaciju predstave od prijave predstave do održavanja te predstave, 
-uključujući i sve međuprocese koji su neophodni. Rad obuhvata
+uključujući i sve međuprocese koji su neophodni za rad jednog pozorišta. Rad obuhvata
 analizu sistema kroz slučajeve upotrebe: ,,Organizacija predstave``, ,,Rezervacija pozorišnih sala``,
 ,,Održavanje repertoara``, ,,Prodaja karata``, ,,Vođenje finansija``, model baze podataka na konceptualno
 i logičkom nivou, predlog arhitekture sistema i predlog korisničkog interfejsa. Uz rad postoji
-i prototip koji pokriva prvi slučaj upotrebe.
+i prototip koji pokriva neke slučajave upotrebe.
 Inspiracija za način rada informacionog sistema koji je prezentovan u ovom radu je Narodno pozorište
 u Beogradu. \cite{narodnopozoriste}.   
 
@@ -99,13 +99,30 @@ u Beogradu. \cite{narodnopozoriste}.
 \newpage
 
 \section{Uvod}
-Ovaj rad se bavi modeliranjem najvažnijih procesa u radu jednog pozorišta, gde se akcenat
-stavlja na proces produkcije predstave. Proces predstave se sastoji iz dva glavna 
-dela\cite{hamilton_theatre_producing_the_drama}:
-\begin{itemize}
-  \item priprema i izvođenje
-  \item tehnički deo
-\end{itemize}
+Osnovni cilj ovog seminarskog rada je da se stekne praktično i teorijsko znanje u izradi jednog
+informacionog sistema. 
+
+Svaka sekcija predstavlja jedan ili više odgovora na zadatke koji su 
+zadati od strane mentora. Lista zadataka:
+
+\begin{enumerate}
+  \item Izbor teme zadatka.
+  \item Napisana je prva verzija analize sistema sa 
+        pratećim dijagramima. Svaki član tima ubacio je
+        opis bar jednog slučaja upotrebe.
+  \item Završena je analiza sistema i napisani su svi
+        slučajevi upotrebe. Ubačeni su svi prateći
+        dijagrami (UML, DTP, BPMN).
+  \item Pripremljen je model baze podataka (ER dijagram,
+        dijagram tabela ili dijagram klasa podataka).
+  \item Napisan je predlog arhitekture sistema (sa
+        pratećim dijagramima).
+  \item Pripremljene su slike/skice predloga korisničkog
+        interfejsa.
+  \item Završen je funkcionalan prototip. Napravljen je
+        demo za bar jedan (složeniji) slučaj upotrebe.
+  \item Finalna verzija.
+\end{enumerate}
 
 \subsection{Pojmovi i definicije}
 
@@ -157,13 +174,11 @@ podataka, pa su i na osnovu tog modela definisani.
 
 \section{Analiza sistema}
 Informacioni sistem je namenjen korisnicima koji su zaposleni u pozorištu i klijentima, tj. posetiocima 
-pozorišta. Sistem nije namenjen za neku konkretno pozorište, već više predstavlja neko opšte rešenje koje
-se može dodatno modifikovati po potrebama klijenta koji zahteva informacioni sistem. Ipak, ideja 
-sistema je da bude što bliži postojećem informacionom sistemu Narodnog pozorišta u Beogradu. Nažalost,
-zbog situacije sa pandemijom, nije bilo mnogo mogućnosti sa direktnom komunikacijom sa zaposlenima
-Narodnog pozorišta.
+pozorišta. Sistem nije namenjen za neko konkretno pozorište, već više predstavlja neko opšte rešenje koje
+se može dodatno modifikovati po potrebama klijenta koji zahteva napredniji informacioni sistem. Ipak, ideja 
+sistema je da bude što bliži postojećem informacionom sistemu Narodnog pozorišta u Beogradu.
   
-Na narednoj slici nalazi se dijagram nultog nivoa koji grafički prikazuje
+Na narednoj slici nalazi se dijagram nultog nivoa tj. kontekst koji grafički prikazuje
 osnovne aktere u sistemu i veze među njima.
 
 \begin{figure}[H]
@@ -745,12 +760,12 @@ Organizator ima uvid u predstave za koje je zadužen. Nakon organizovanja predst
 
 \newpage
 \subsection{Prodaja karata}
-Prodaja karata je proces koji sledi nakon što je određen datum, rezervisana sala i dodeljene uloge
+Prodaja karata je proces koji sledi nakon što je određen datum, rezervisana sala i dodeljene su uloge
 zaposlenim. Tada je moguće preciznije odrediti potreban budžet za dalju realizaciju predstave, pa
 samim tim i minimalni broj kupljenih karata za izvođenje. Na osnovu rezervisane sale (i potencijalno još 
 nekih drugih faktora, kao što je epidemija ili slično) određuje se broj karata za prodaju. Gledaoci 
 (klijenti) predstave mogu da kupe ili rezervišu kartu za pozorište preko veb stranice pozorišta. 
-Takođe, klijenti mogu da kupe rezervisanu kartu ili nerezervisanu kartu ako nisu rasprodate na blagajni.
+Takođe, klijenti mogu da kupe rezervisanu kartu ili nerezervisanu kartu ako one nisu rasprodate na blagajni.
 Klijent ima pravo da zatraži povraćaj novca za kupljenu kartu, a slučaju da se cela predstava otkaže,
 potrebno je, uz potvrdu organizatora, da se izvrši povraćaj novca svim klijentima.
 
@@ -762,7 +777,7 @@ potrebno je, uz potvrdu organizatora, da se izvrši povraćaj novca svim klijent
   \label{usecase_prodaja_karata}
 \end{figure}
 
-Ovaj proces ima, grubo rečeno, tri glavna stanja:
+Ovaj proces (odnosi se na konkretnu predstavu) ima, grubo rečeno, tri glavna stanja:
 \begin{itemize}
   \item Predstava je aktivna;
   \item Kupovina i rezervacija karata;
@@ -778,9 +793,10 @@ Ovaj proces ima, grubo rečeno, tri glavna stanja:
 \end{figure}
 
 Celokupni proces se deli na dve celine: definisanje broja karata za predstavu (organizacija) i trgovina 
-kartama. To se i može primetiti na dijagramu toka podataka. Repertoar je neophodan kako zbog čitanja
+kartama. To se i može primetiti na dijagramu toka podataka. Repertoar je neophodan zbog čitanja
 i ažuriranja broja slobodnih karata za neku konkretnu predstavu, a lista karata je neophodna za čuvanje
-kodova rezervisanih i kupljenih karata.  
+kodova rezervisanih i kupljenih karata. Kodovi su neophodni za kupovinu rezervisanih karata na blagajni
+i povraćaj novca za konkretnu kartu.
 
 \begin{figure}[H]
   \begin{center}
@@ -855,10 +871,8 @@ sale za izvođenje predstave. Nakon definisanja se ažurira repertoar na stranic
 
 \noindent\textbf{Preduslovi:} 
   \begin{itemize}
-    \item Korisnik mora da bude registrovan sa odgovarajućim mejlom. 
-    \item Korisnik mora da ima pristup internetu.
-    \item Sistem mora da bude u funkciji.
-    \item Sistem mora da bude pouzdan. 
+    \item Korisnik mora da bude prijavljen.
+    \item Sistem mora da bude pouzdan i u funkciji.
     \item Mora da postoji barem jedno slobodno mesto za željenu predstavu, a samim tim mora da 
           postoji barem jedna aktivna predstava. 
     \item Ukoliko korisnik želi da kupi kartu, mora da ima karticu za onlajn plaćanje (ili 
@@ -1027,7 +1041,8 @@ gube se rezervacije i time se povećava broj slobodnih karata.
 
 
 \subsubsection{Zahtev za povraćaj novca za kupljenu kartu}  
-\noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.
+\noindent\textbf{Kratak opis:} Korisnik može da zahteva povraćaj novca za kupljenu kartu neke predstave.\\
+
 \noindent\textbf{Učesnici:} 
   \begin{itemize}
     \item Klijent koji zahteva povraćaj novca.
@@ -1695,9 +1710,6 @@ Korisnici mogu da pogledaju repertoar i da rezervišu ili kupe karte za predstav
   \caption{Obrazac za plaćanje}
   \label{klijent_plaćanje}
 \end{figure}
-
-\section{Prototip}
-Ovo je zaključak.
 
 \section{Zaključak}
 Ovo je zaključak.
